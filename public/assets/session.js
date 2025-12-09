@@ -11,7 +11,7 @@ async function checkSession() {
     if (!res.ok) {
       const errorText = await res.text();
       console.error(`Server error: ${res.status} ${res.statusText}`, errorText);
-      statusEl.textContent = `Error: Server responded with status ${res.status}`;
+      statusEl. = `Error: Server responded with status ${res.status}`;
       return;
     }
 
@@ -19,21 +19,21 @@ async function checkSession() {
     if (!contentType || !contentType.includes("application/json")) {
       const errorText = await res.text();
       console.error("Expected JSON, but received:", contentType, errorText);
-      statusEl.textContent = "Error: Did not receive JSON response";
+      statusEl.innerTHML = "Error: Did not receive JSON response";
       return;
     }
 
     const data = await res.json();
 
     if (data.loggedIn) {
-      statusEl.textContent = `Logged in as ${data.user.email}`;
+      statusEl.innerTHML = `Logged in as ${data.user.email}`;
     } else {
-      statusEl.textContent = "Not logged in";
+      statusEl.innerTHML = "Not logged in";
     }
 
   } catch (err) {
     console.error("Error checking session:", err);
-    document.getElementById("status90").textContent = "Error checking session";
+    document.getElementById("status90").innerTHML = "Error checking session";
   }
 }
 
@@ -55,7 +55,7 @@ document.getElementById("Logoutid").addEventListener("click", async () => {
 
     if (data.success) {
       const deniedEl = document.getElementById("sesmsg");
-      deniedEl.textContent = "Session ended. Please log in again.";
+      deniedEl.innerTHML = "Session ended. Please log in again.";
       deniedEl.style.display = "block";
     } else {
       console.error("Logout failed:", data);
