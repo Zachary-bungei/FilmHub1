@@ -104,7 +104,7 @@ async function doSignup(data) {
     if(result.success == true){
          errform("Created account successfully");
          setTimeout(() => {
-            // window.location.replace("/assets");
+            window.location.replace("/assets");
 
         }, 1000);
     }else{
@@ -121,7 +121,7 @@ async function doLogin(data) {
     if(result.success == true){
          errform(" login successfully");
          setTimeout(() => {
-            window.location.replace("/assets.index.html");
+            window.location.replace("/assets");
         }, 1000);
     }else{
         errform("Failed to login");
