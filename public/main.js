@@ -97,13 +97,15 @@ document.getElementById('SignBtn').addEventListener('click', () => {
 async function doSignup(data) {
     const result = await sendData("signup", {
       email: data.email,
+      username: data.username,  
       password: data.password
     });
     console.log("Signup", result);
   }
 async function doLogin(data) {
     const result = await sendData("login", {
-      email: data.email,
+      email: data.email, 
+      username: data.username,
       password: data.password
     });
     console.log("login", result);
