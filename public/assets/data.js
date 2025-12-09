@@ -274,7 +274,7 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   // if(rateValue < 0 || rateValue > 5) return alert("Rate must be between 0 and 5");
     
   // PDF validation
-  const pdfFile = document.getElementById("pdf").value;
+  const pdfFile = document.getElementById("pdf");
    pdfFile = pdfInput.files[0];
   if (pdfFile?.type && pdfFile.type !== "application/pdf") {
       return alert("PDF must be a PDF file");
