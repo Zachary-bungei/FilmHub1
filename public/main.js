@@ -99,14 +99,14 @@ async function doSignup(data) {
       email: data.email,
       password: data.password
     });
-    console.log("Signup", result));
+    console.log("Signup", result);
   }
 async function doLogin(data) {
     const result = await sendData("login", {
       email: data.email,
       password: data.password
     });
-    console.log("login", result));
+    console.log("login", result);
   }
 async function sendData(action1, data = {}) {
    try {
