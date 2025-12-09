@@ -95,12 +95,20 @@ async function doSignup(data) {
       email: data.email,
       password: data.password
     });
-  
+    
     console.log("Signup:", result);
+  }
+async function doLogin(data) {
+    const result = await sendData("login", {
+      email: data.email,
+      password: data.password
+    });
+    
+    console.log("login:", result);
   }
 async function sendData(action, data = {}) {
    try {
-       const response = await fetch("https://filmhub-x7on.onrender.com/s", {
+       const response = await fetch("https://filmhub-x7on.onrender.com", {
          method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -122,25 +130,6 @@ async function sendData(action, data = {}) {
 }
 
 
-
-// async function sendAction(action, data = {}) {
-//     try {
-//       const response = await fetch("https://filmhub-x7on.onrender.com", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify({ action, data })
-//       });
-  
-//       const result = await response.json();
-//       return result;
-//     } catch (err) {
-//       console.error("Request failed:", err);
-//       return { success: false, error: err.message };
-//     }
-//   }
-  
 function errform(error) {
      const ErrP = document.getElementById('ErrForm');
         ErrP.textContent = error;
