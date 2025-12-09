@@ -1,4 +1,4 @@
-const MAX_ATTEMPTS = 50; 
+const MAX_ATTEMPTS = 200; 
 let LogMode = true; 
 
 function getInputData() {
@@ -104,7 +104,7 @@ async function doSignup(data) {
     if(result.success == true){
          errform("Created account successfully");
          setTimeout(() => {
-            window.location.replace("/assets.index.html");
+            window.location.replace("/assets");
 
         }, 1000);
     }else{
