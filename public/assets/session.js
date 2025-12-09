@@ -1,9 +1,25 @@
 async function checkSession() {
   try {
     const res = await fetch("https://filmhub-x7on.onrender.com/check-session");
-    const data = await res.json();
 
-    const statusEl = document.getElementById("sesmsg");
+     if (!res.ok) {
+      const errorText = await res.text(); // Read the response as text for debugging
+      console.error(`Server error: ${res.status} ${res.statusText}`, errorText);
+      statusEl.textContent = `Error: Server responded with status ${res.status}`;
+      return; // Stop execution if response is not ok
+    }
+
+    // Check if the content type is JSON
+    const contentType = res.headers.get("content-type");
+    if (!contentType || !contentType.includes("application/json")) {
+      const errorText = await res.text();
+      console.error("Expected JSON, but received:", contentType, errorText);
+      statusEl.textContent = "Error: Did not receive JSON response";
+      return; // Stop execution if not JSON
+    }
+    
+    const data = await res.json();
+    
 
     if (data.loggedIn) {
       statusEl.textContent = `Logged in as ${data.user.email}`;
