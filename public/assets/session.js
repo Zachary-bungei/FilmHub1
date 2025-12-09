@@ -1,8 +1,7 @@
 async function checkSession() {
   try {
-    const res = await fetch("https://filmhub-x7on.onrender.com/check-session", {
-      method: "POST",
-      credentials: "include",               
+    const res = await fetch("https://filmhub-x7on.onrender.com/checksession", {
+      method: "POST",             
       headers: {
         "Content-Type": "application/json"
       },
