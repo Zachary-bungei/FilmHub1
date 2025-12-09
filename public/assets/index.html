@@ -1,1 +1,1220 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FilmHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<style>
+</style>
+<body>
+    <div class="body_div">
+ 
+
+
+        <div class="container" id="container">
+            <!-- Header -->
+            <header class="header">
+                <!-- Logo -->
+                <div class="logo-icon">
+                    <img src="../materials/zaxly.png" alt="" width="50px" height="50px"> <b>FilmHub</b>
+                    <!-- <span class="material-icons" id="logo_icon">apps</span> -->
+                </div>
+
+                <!-- Navigation -->
+                <nav class="navigation_bar">
+                    <div class="navbutns">
+                        <button class="nav-item active">
+                            <span class="material-icons">add</span> post
+                        </button>
+                        <button class="nav-item active">
+                            <span class="material-icons">shopping_cart</span> buy
+                        </button>
+                        <button class="nav-item">
+                            <span class="material-icons">leaderboard</span> Top Tiers
+                        </button>
+                        <button class="nav-item">
+                            <span class="material-icons">search</span> Search
+                        </button>
+                        <button class="nav-item">
+                            <span class="material-icons">account_circle</span> Profile
+                        </button>
+                    </div>
+                    <div id="earchdiv">
+                        <span class="material-icons">search</span>
+                        <input type="text" name="query" id="query" placeholder="Search">
+                        <button type="submit">
+                        </button>
+                    </div>
+                </nav>
+            </header>
+    
+            <!-- Main Content -->
+
+            <!-- ////////////////////////////////////////////////////// -->
+            <main class="main-content">
+
+                <!-- Suggestion Section -->
+                <section class="content-section" id="SuggestionSection">
+                    <div class="section-header">
+                        <h2 class="section-title">suggestion</h2>
+                        <hr id="hr10">
+                    </div>
+                    <div class="cards-grid suggestion-grid" id="suggestion-grid">
+
+                    </div>
+                </section>
+    
+                <!-- action Section -->
+                <section class="content-section" >
+                    <div class="section-header">
+                        <h2 class="section-title">Action</h2>
+                        <hr id="hr11">
+                    </div>
+                    <div class="cards-grid friends-grid" id="ActionSection">
+
+                    </div>
+                </section>
+    
+                <!-- adventure Section -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Adventure</h2>
+                        <hr id="hr12">
+                    </div>
+                    <div class="cards-grid ideas-grid" id="adventureSection">
+                    </div>
+                </section>
+    
+                <!-- Comedy Section -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Comedy</h2>
+                        <hr id="hr13">
+                    </div>
+                    <div class="cards-grid ideas-grid" id="ComedySection">
+
+                    </div>
+                </section>
+    
+                <!-- Drama Section -->
+                <section class="content-section" >
+                    <div class="section-header">
+                        <h2 class="section-title">Drama</h2>
+                        <hr id="hr14">
+                    </div>
+                    <div class="cards-grid ideas-grid" id="DramaSection">
+
+                    </div>
+                </section>
+    
+                <!-- Fantasy Section -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Fantasy</h2>
+                        <hr id="hr15">
+                    </div>
+                    <div class="cards-grid ideas-grid" id="FantasySection">
+
+                    </div>
+                </section>
+    
+                <!-- Horror Section -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Horror</h2>
+                        <hr id="hr15">
+                    </div>
+                    <div class="cards-grid ideas-grid" id="HorrorSection">
+
+                    </div>
+                </section>
+    
+                <!-- Mystery Section -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Mystery</h2>
+                        <hr id="hr17">
+                    </div>
+                    <div class="cards-grid ideas-grid" id="MysterySection">
+
+                    </div>
+                </section>
+    
+                <!-- Romance Section -->
+                <section class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Romance</h2>
+                        <hr id="hr18">
+                    </div>
+                    <div class="cards-grid ideas-grid" id="RomanceSection">
+
+                    </div>
+                </section>
+    
+                 <!-- Science Fiction (Sci-Fi) Section -->
+                 <section class="content-section">
+                    <div class="section-header">
+                        <h2 class="section-title">Science Fiction</h2>
+                        <hr id="hr19">
+                    </div>
+                    <div class="cards-grid ideas-grid" id="Sci-FiSection">
+
+                    </div>
+                </section>
+            </main>
+            
+    
+            <!-- Floating Action Button -->
+
+            <div class="moreactions" id="moreactions">
+                <button class="action-btn" id="abtn1">
+                    <span class="material-icons">rate_review</span>
+                </button>
+                <button class="action-btn">
+                    <span class="material-icons">notifications</span>
+                </button>
+                <button class="action-btn">
+                    <span class="material-icons">smart_toy</span>
+                </button>
+                <button class="action-btn">
+                    <span class="material-icons">verified</span>
+                </button>
+                <button class="action-btn">
+                    <span class="material-icons">help_outline</span>
+                </button>
+                <button class="action-btn">
+                    <span class="material-icons">gavel</span>
+                </button>
+                <button class="action-btn">
+                    <span class="material-icons">logout</span>
+                </button>
+            </div>
+        </div>
+        <div class="siderway">
+            <div class="siderchat siders" id="siderchat">
+                <div class="siderbar" id="siderbar">
+                    <div class="userchat">
+                        <p id="username1">zaxly bungie</p>
+                        <span class="material-icons" style="color: rgb(9, 180, 9); font-size:20px; margin-top: 4px;" >fiber_manual_record</span> <p>Online</p>
+                    </div>
+                    <button class="set_chat">
+                        setting
+                    </button>
+                    <div class="set_panel">
+                        <div class="barset_panel">
+                            <button class="cancel1_btn">
+                                <span class="material-icons">cancel</span>
+                            </button>
+                            <h1 class="title_set_chat-panel"> <span class="material-icons">setting</span> Setting</h1>
+                        </div>
+                        <div class="set1">
+                            <span class="material-icons">photo_library</span> 
+                            <h6>bg-image</h6>
+                        </div>
+                        <div class="set2">
+                            <span class="material-icons">light_mode</span>
+                            <h6>
+                                Theme
+                            </h6>
+                        </div>
+                        <div class="set3">
+                            <span class="material-icons">palette</span>
+                            <h6>Colors</h6>
+                        </div>
+                        <div class="set4">
+                            <span class="material-icons">blur_on</span> 
+                            <h6>
+                                Blurring
+                            </h6>
+                        </div>
+                        <div class="set5">
+                            <span class="material-icons">open_with</span> 
+                            <h6>
+                                Possition
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainchatfield">
+                    <div class="message1">
+                        <div class="msg_hder">
+                            <img src="../materials/zaxly.png"id="msg_img"> 
+                            <div class="aboutmsg">
+                                <p class="sender">zaxly</p> <b>.</b>
+                                <p>9:90</p> 
+                                <p>–edited</p>
+                            </div>
+                            <div class="msg_set">
+                                <button id="msgset_icon1" class="msgset_icon1">
+                                    <span class="material-icons">format_quote</span>
+                                </button>
+                                <button id="msgset_icon2" class="msgset_icon2">
+                                    <span class="material-icons">visibility_off</span>
+                                </button>
+                                <button id="msgset_icon3" class="msgset_icon3">
+                                    <span class="material-icons">edit</span>
+                                </button>
+                                <button id="msgset_icon4" class="msgset_icon4">
+                                    <span class="material-icons emoji">emoji_emotions</span>
+                                </button>
+                                <button id="msgset_icon5" class="msgset_icon5">
+                                    <span class="material-icons">delete</span>
+                                </button>
+                                <div class="emojReact">
+                                    <input type="text" placeholder="emoje" name="reactInput">
+                                    <button><spanc class="material-icons">upload</span></button>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="msg_body">
+                            <p id="othersreation">reation</p>
+                            <div class="quouted">
+                                <!-- <div class="sider">
+                                </div> -->
+                                <div class="mainquote">
+                                    <div class="quo_owner">
+                                        <p id="namme22">Zaxly2</p>
+                                        <p>12:40</p>
+                                    </div>
+                                    <div class="quo_text">
+                                        Quote text goes here or image
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filesend">
+                                <div class="SentImg">
+                                    <canvas id="sentimg1">
+                                    </canvas>
+                                </div>
+                                <div class="SentPDF">
+                                    <canvas class="PreviewPDF">
+
+                                    </canvas>
+                                    <!-- <button class="filename">
+                                        preview
+                                    </button> -->
+                                </div>
+                                <div class="SentVideo">
+                                    <!-- <video src=""></video> -->
+                                </div>
+                            </div>
+                            <div class="text20">
+                                <P>normal text</P>
+                                <b class="boldedtext">boldedtext <i>italiated text</i>
+                                </b>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="inputchatfield" id="inputchatfield">
+                    <div class="textchatarea" contenteditable="true" data-placeholder="Say something"></div>
+                    <div class="toolchat">
+                        <span class="material-icons icon-upload">cloud_upload</span>
+                        <blockquote class="encryption_msg"> <span class="material-icons end-to-end_lock" >lock</span> End-to-end encryption</blockquote>
+                        <span class="material-icons  send_icon">near_me</span>
+                    </div>
+                </div>
+            </div>
+            <div class="previewfiles siders">
+                <div class="pre_img">
+                </div>
+                <div class="pre_video">
+                </div>
+                <div class="prev_pdf">
+                </div>
+                select and file
+            </div>
+            <div class="profile_setting siders">
+                <div id="sidebar">
+
+                    <!-- HEADER -->
+                    <div id="header11">
+                      <h2> FilmHub AI Assistant</h2>
+                      <button id="new-chat"> + New Chat</button>
+                    </div>
+                  
+                    <!-- GREETING -->
+                    <div id="greeting">
+                      Powered by AI — ask anything, your chats will appear here.
+                    </div>
+                  
+                    <!-- CHAT HISTORY -->
+                    <div id="chat-box"></div>
+                  
+                    <!-- INPUT -->
+                    <div id="input-area">
+                      <input id="query2" type="text" placeholder="Ask something…" />
+                      <button id="send"><span class="material-icons">send</span></button>
+                    </div>
+                  
+                  </div>
+                  
+            </div>
+            <div class="lisencesbox siders">
+                <div class="form-wrap">
+                    <h2>Submit Your Idea</h2>
+                  
+                    <form id="ideaForm">
+                  
+                      <label>Banner Image (png, jpeg)</label>
+                      <input type="file" id="banner" accept="image/*" />
+                      <img id="bannerPreview" class="banner-preview" />
+                  
+                      <label>Title - 6 words</label>
+                      <input type="text" id="title" placeholder="Your idea title" required />
+                  
+                      <label>Hook 20 words</label>
+                      <input type="text" id="hook" placeholder="Short hook for attention" required />
+                  
+                      <label>Description - 50 < words < 150</label>
+                      <textarea id="description" placeholder="Describe your idea…" required></textarea>
+                  
+                      <label>PDF File - max 5mb</label>
+                      <input type="file" id="pdf" accept="application/pdf" required />
+
+                  
+                      <button type="submit">Submit Idea</button>
+                    </form>
+                  </div>
+            </div>
+            <div class="chatbotdiv siders">
+                <div id="license-section">
+                <style>
+                  #license-section {
+                    background-color: #f1efef00;
+                    border: 1px solid #d0d0d000;
+                    padding: 2.5em;
+                    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                    max-width: 100%;
+                    width: 100%;
+                    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+                    border-radius: 20px;
+                    color: #ffffffb5;
+                    line-height: 1.7;
+                    height: 90vh;
+                    overflow: scroll;
+                    position: relative;
+                  }
+              
+                  #license-section h2 {
+                    /* position: absolute; */
+                    font-size: 2em;
+                    margin-bottom: 0.4em;
+                    color: #1a1a1a;
+                    border-bottom: 2px solid #007acc;
+                    padding-bottom: 0.3em;
+                    background-color: orangered;
+                    margin-top: 20px;
+                  }
+              
+                  #license-section h3 {
+                    margin-top: 1.5em;
+                    font-size: 1.4em;
+                    color: #ffffff;
+                  }
+              
+                  #license-section p {
+                    margin: 0.8em 0;
+                  }
+              
+                  #license-section ul {
+                    padding-left: 1.2em;
+                    margin: 0.5em 0 1em 0;
+                  }
+              
+                  #license-section ul li {
+                    margin-bottom: 0.5em;
+                  }
+              
+                  #license-section pre {
+                    background: #333232;
+                    border-left: 5px solid orangered;
+                    padding: 1.5em;
+                    overflow-x: auto;
+                    font-size: 0.95em;
+                    color: #d8d5d5;
+                    border-radius: 5px;
+                    white-space: pre-wrap;
+                  }
+              
+                  #license-section .highlight {
+                    font-weight: bold;
+                    color: #000;
+                  }
+              
+                  #license-section .project-name {
+                    font-weight: bold;
+                    color: #fbfdffd6;
+                  }
+              
+                  #license-section .author {
+                    font-style: italic;
+                    color: #444;
+                  }
+              
+                  #license-section .meta {
+                    font-size: 0.9em;
+                    color: #666;
+                    margin-top: 2em;
+                    text-align: right;
+                  }
+                </style>
+              
+                <h2>License & Usage Rights</h2>
+              
+                <p>
+                  This section outlines the licensing terms for the digital assets, source code, scripts, designs, and associated intellectual property presented on or through the <span class="project-name">Zaxly Assets</span> platform. Unless otherwise noted, all materials are released under the <span class="highlight">MIT License</span>.
+                </p>
+              
+                <h3>Summary of Permissions</h3>
+                <ul>
+                  <li>✅ Use for personal and commercial projects</li>
+                  <li>✅ Modify or adapt source code and assets</li>
+                  <li>✅ Distribute, publish, and share modified versions</li>
+                  <li>✅ Use within proprietary or open-source software</li>
+                </ul>
+              
+                <h3>Requirements</h3>
+                <ul>
+                  <li>📎 Include the original copyright notice</li>
+                  <li>📎 Include the MIT License text in distributions</li>
+                  <li>📎 Clearly attribute <span class="author">Zaxly</span> or any credited contributors if redistributed</li>
+                </ul>
+              
+                <h3>Restrictions</h3>
+                <ul>
+                  <li>❌ No warranty or liability from the original author</li>
+                  <li>❌ Cannot claim ownership of unmodified components</li>
+                  <li>❌ License does not cover third-party assets not authored by Zaxly</li>
+                </ul>
+              
+                <h3>Full MIT License Text</h3>
+                <pre>
+              MIT License
+              
+              Copyright (c) 2025 Zaxly
+              
+              Permission is hereby granted, free of charge, to any person obtaining a copy
+              of this software and associated documentation files (the “Software”), to deal
+              in the Software without restriction, including without limitation the rights
+              to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+              copies of the Software, and to permit persons to whom the Software is
+              furnished to do so, subject to the following conditions:
+              
+              The above copyright notice and this permission notice shall be included in
+              all copies or substantial portions of the Software.
+              
+              THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+              IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+              FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+              AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+              LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+              OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+              SOFTWARE.
+                </pre>
+              
+                <h3>Version Information</h3>
+                <p>
+                  This license applies to all components of <span class="project-name">Zaxly Assets</span> unless specifically overridden by another license.
+                </p>
+              
+                <div class="meta">
+                  License version: 1.0<br>
+                  Last updated: June 2025
+                </div>
+              </div>
+              </div>
+            <div class="notification siders">
+                <div class="notification-container">
+                    <div class="div_not_hdr">
+                        <!-- <span class="material-icons close-btn">close</span> -->
+                        <h3 class="title-bar">Notifications</h3>
+                    </div>
+                    <div class="popupate_nots" id="popupate_nots">
+                        <!-- <div class="notification-box">
+                            <div class="notification-header">
+                              <div class="notification-title">
+                                  <b>zaxly</b>
+                                   <p>–</p><blockquote>promotion
+      
+                                   </blockquote>
+                              </div>
+                              <div class="material-icons" title="Delete">delete</div>
+                            </div>
+                            <div class="not_content">
+                              <div class="notification-body">
+                                  Is your add-on creative or unexpected in tech, design, or workflow? If similar ideas exist, how is yours better? What’s original or delightful about it?
+                                </div>
+                                <div class="notification-footer">
+                                  <div class="doc-count">document (<b>5</b>)</div>
+                                  <div class="footer-actions">
+                                    <span class="read"><span class="material-icons">library_books</span>read more</span>
+                                    <span class="open"><span class="material-icons">picture_as_pdf</span>open</span>
+                                    <span class="about"><span class="material-icons">visibility</span>about</span>
+                                  </div>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                  </div>
+            </div>
+
+            <style>
+                .notification-container {
+                  width: calc(100% + 40px);
+                  height: calc(100vh - 100px);
+                  background: #d3050500;
+                  border-radius: 30px;
+                  padding: 20px;
+                  position: relative;
+                  /* border: 2px dotted #1f1f1f; */
+                }
+                
+                /* Header row */
+                .notification .div_not_hdr {
+                  display: flex;
+                  align-items: center;
+                  justify-content: space-between;
+                  margin-bottom: 20px;
+                }
+                
+                /* Close button */
+                #close-btn {
+                  position: absolute;
+                  color: red;
+                  border: 2px solid red;
+                  border-radius: 50px;
+                  width: 96px;
+                  height: 26px;
+                  font-size: 15px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                  right: 25px; 
+                  top:24px;
+                  font-weight: bold;
+                }
+                
+                /* Title bar */
+                .notification .title-bar {
+                  color: rgb(245, 74, 21);
+                  font-size: 24px;
+                  font-weight: bold;
+                  border: 2px solid rgb(247, 82, 0);
+                  border-radius: 20px;
+                  padding: 5px 15px;
+                  text-align: center;
+                  flex-grow: 1;
+                  margin-left: 10px;
+                }
+                
+                /* Notification list wrapper */
+                .notification .popupate_nots {
+                  display: flex;
+                  flex-direction: column;
+                  gap: 20px;
+                }
+                
+                /* Notification card */
+                .notification .notification-box {
+                  background-color: #444;
+                  border-radius: 20px;
+                  padding: 15px;
+                  color: #eee;
+                  display: flex;
+                  flex-direction: column;
+                }
+                
+                /* Header of the notification */
+                .notification .notification-header {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: flex-start;
+                  border-bottom: 2px solid #ccc;
+                  padding-bottom: 6px;
+                  margin-bottom: 10px;
+                  color: #a8e6cf;
+                  font-weight: bold;
+                  font-size: 18px;
+                }
+                
+                /* Title content area (with zaxly – promotion) */
+                .notification .notification-title {
+                  display: flex;
+                  align-items: center;
+                  gap: 5px;
+                  flex-wrap: wrap;
+                }
+                
+                .notification .notification-title b {
+                  color: #a8e6cf;
+                  font-size: 18px;
+                }
+                
+                .notification .notification-title p {
+                  margin: 0;
+                  color: #fff;
+                }
+                
+                .notification .notification-title blockquote {
+                  margin: 0;
+                  padding: 0;
+                  color: #fff;
+                  font-style: italic;
+                  border-left: 3px solid #88888800;
+                  padding-left: 5px;
+                }
+                
+                /* Content wrapper */
+                .notification .not_content {
+                  font-size: 14px;
+                  line-height: 1.6;
+                }
+                
+                /* Footer section */
+                .notification .notification-footer {
+                  display: flex;
+                  justify-content: space-between;
+                  align-items: center;
+                  margin-top: 10px;
+                  flex-wrap: wrap;
+                }
+                
+                /* Document count box */
+                .notification .doc-count {
+                  background: #00000000;
+                  border: 2px solid #fc4f0ac3;
+                  border-radius: 30px;
+                  padding: 1px 10px;
+                  font-size: 13px;
+                  color: #c8c2c0c3;
+                }
+                
+                /* Footer actions */
+                .notification .footer-actions {
+                  display: flex;
+                  gap: 10px;
+                  margin-top: 8px;
+                }
+                
+                .notification .footer-actions span {
+                  display: flex;
+                  align-items: center;
+                  font-size: 14px;
+                  font-weight: bold;
+                  cursor: pointer;
+                }
+                
+                .notification .footer-actions .material-icons {
+                  font-size: 18px;
+                  margin-right: 4px;
+                }
+                
+                .notification .footer-actions .read {
+                  color: #e2dfde;
+                }
+                
+                .notification .footer-actions .open {
+                    color: #e2dfde;
+                }
+                
+                .notification .footer-actions .about {
+                    color: #e2dfde;
+                }
+            </style>
+                
+            <div class="terms_service siders">
+
+            </div>
+            <div class="feedbackbox siders">
+                <div class="form_container_wrap">
+                    <div class="form_close_icon">
+                      <span class="material-icons">close</span>
+                    </div>
+                
+                    <div class="form_title">
+                      <b>feedback & rating</b>
+                    </div>
+                
+                    <div class="form_rating_row">
+                      <p><b>rate:</b></p>
+                      <div class="star-container">
+                        <span class="material-icons form_rating_star" data-rate="1">star</span>
+                        <span class="material-icons form_rating_star" data-rate="2">star</span>
+                        <span class="material-icons form_rating_star" data-rate="3">star</span>
+                        <span class="material-icons form_rating_star" data-rate="4">star</span>
+                        <span class="material-icons form_rating_star" data-rate="5">star</span>
+                      </div>
+                      <input type="hidden" id="selectedRating" name="rating" value="0">
+                    </div>
+                
+                    <div class="form_input_group">
+                      <input type="email" value="zaxly.me@gamil.com" readonly/>
+                    </div>
+                
+                    <div class="form_input_group">
+                      <select>
+                        <option disabled selected>Choose a category</option>
+                        <option>testimoney</option>
+                        <option>Improvement</option>
+                        <option>Abuse</option>
+                        <option>Valnerabilities</option>
+                        <option>cogratuations</option>
+                        <option>consideration</option>
+                        <option>help</option>
+                        <option>others</option>
+                      </select>
+                    </div>
+                
+                    <div class="form_input_group">
+                      <textarea placeholder="type your message..."></textarea>
+                    </div>
+                
+                    <button class="form_send_button">
+                      Send <span class="material-icons">send</span>
+                    </button>
+                
+                    <p class="form_disclaimer">
+                      <blockquote>Information shaered might be public</blockquote>
+                    </p>
+                  </div>
+            </div>
+            <style>
+              .form_container_wrap {
+                  display: flex;
+                  flex-direction: column;
+                  place-self: center;
+                  position: relative;
+                  background-color: #e1e0e06e;
+                  place-self: center;
+                  width: 80%;
+                  height: calc(100vh - 90px);
+                  border-radius: 40px;
+                  padding: 25px;
+                  color: #fff;
+                  position: relative;
+                  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+                  align-self: center;
+                }
+            
+                .form_close_icon {
+                  position: absolute;
+                  top: 20px;
+                  left: 20px;
+                  width: 35px;
+                  height: 35px;
+                  background: transparent;
+                  border: 2px solid red;
+                  color: red;
+                  border-radius: 50%;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  cursor: pointer;
+                  font-size: 20px;
+                }
+            
+                .form_title {
+                  text-align: center;
+                  font-size: 22px;
+                  margin-bottom: 25px;
+                  padding-bottom: 10px;
+                  border-bottom: 2px solid #ccc;
+                }
+            
+                .form_rating_row {
+                  display: flex;
+                  align-items: center;
+                  margin-bottom: 20px;
+                  font-size: 18px;
+                  gap: 10px;
+                  justify-content: center;
+                  flex-wrap: wrap;
+                }
+            
+                .star-container {
+                  display: flex;
+                  gap: 5px;
+                }
+            
+                .form_rating_star {
+                  color: gray;
+                  font-size: 28px;
+                  cursor: pointer;
+                  transition: color 0.2s ease;
+                }
+            
+                .form_rating_star.filled {
+                  color: red;
+                }
+            
+                .form_input_group {
+                  margin-bottom: 15px;
+                }
+            
+                .form_input_group input,
+                .form_input_group select,
+                .form_input_group textarea {
+                  width: 100%;
+                  background-color: #0f3555;
+                  color: #fff;
+                  border: 2px solid red;
+                  padding: 10px;
+                  border-radius: 20px;
+                  font-size: 16px;
+                  outline: none;
+                }
+            
+                .form_input_group select {
+                  appearance: none;
+                  background-image: url('data:image/svg+xml;utf8,<svg fill="%23ffffff" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+                  background-repeat: no-repeat;
+                  background-position: right 10px center;
+                  background-size: 20px;
+                }
+            
+                .form_input_group textarea {
+                  height: 180px;
+                  resize: none;
+                }
+            
+                .form_send_button {
+                  background: linear-gradient(to right, #ff3d3d, #ff914d);
+                  border: none;
+                  color: white;
+                  padding: 15px;
+                  width: 100%;
+                  border-radius: 30px;
+                  font-size: 18px;
+                  cursor: pointer;
+                  font-weight: bold;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  gap: 8px;
+                  margin-top: 10px;
+                }
+            
+                .form_disclaimer {
+                  margin-top: 15px;
+                  text-align: center;
+                  color: #cfd8dc;
+                  font-size: 14px;
+                }
+              </style>
+            <div class="help_support siders">help and suppport</div>
+            <div id="close-btn">
+                <span class="material-icons ">close</span>Close
+            </div>
+        </div>
+    </div>
+    <script>
+        let showsider = 9;
+        const siders = document.querySelectorAll(".siders");
+        const siderway = document.querySelector(".siderway");
+
+        function checksidercontent(){
+            if (showsider == 0 || showsider > 11) {
+                siders.forEach((sider) => {
+                sider.style.display = "none";
+                });
+                if (siderway) {
+                siderway.style.display = "flex";
+                }
+            } else {
+                siderway.style.display = "flex";
+                siders.forEach((sider) => {
+                sider.style.display = "none";
+                });
+                // if (siderway) {
+                // siderway.style.display = "noe";
+                // }
+                let flexone = siders[showsider - 1];
+                if (flexone) {
+                    flexone.style.display = "flex";
+                }flexone.style.display = "flex";
+            }
+        }
+        checksidercontent();
+
+        let isWideEnough = true; 
+        function checkScreenWidth() {
+            const threshold = 968; 
+            if (window.innerWidth < threshold) {
+                isWideEnough = false;
+            } else {
+                isWideEnough = true;
+            }
+
+        }
+        window.addEventListener('DOMContentLoaded', checkScreenWidth);
+        window.addEventListener('resize', checkScreenWidth);
+
+        const actionButtons = document.querySelectorAll('#moreactions .action-btn');
+        actionButtons.forEach((btn, index) => {
+            btn.addEventListener('click', () => {
+                if(index == 6 || index == 7) return;
+                showsider = index + 1; 
+                checksidercontent(); 
+            });
+        });
+
+    </script>
+    <script>
+        const leftMap = {
+            post: '8.3%',
+            buy: '23.6%',
+            friends: '41.5%',
+            topteirs: '61.5%'
+        };
+         // Get all buttons
+        const buttons4_4 = document.querySelectorAll('.nav-item')
+
+        // Get the element you want to affect
+        const target4 = document.querySelector('.navigation_bar');
+
+        // Add event listener to each button
+        buttons4_4.forEach(btn => {
+            btn.addEventListener('click', () => {
+                const key = btn.innerText.trim().toLowerCase(); 
+                if (leftMap[key]) {
+                    target4.style.setProperty('--dot-left', leftMap[key]);
+                    // alert(leftMap[key]);
+                }
+            });
+        });
+    </script>
+    <script>
+        // banner image preview
+        const bannerInput = document.getElementById('banner');
+        const bannerPreview = document.getElementById('bannerPreview');
+        
+        bannerInput.addEventListener('change', () => {
+          const file = bannerInput.files[0];
+          if (!file) return;
+          const reader = new FileReader();
+          reader.onload = e => {
+            bannerPreview.src = e.target.result;
+            bannerPreview.style.display = 'block';
+          };
+          reader.readAsDataURL(file);
+        });
+        
+        // form submit demo
+        document.getElementById('ideaForm').addEventListener('submit', e => {
+          e.preventDefault();
+          alert('Form submitted! Here you’d send the data to your server or Supabase.');
+        });
+        </script>
+        <script>
+        // const box33 = document.getElementById("othersreation");
+        // if (box33.value === "0") {
+        //     box33.style.display = "none";
+        // }
+        // if (box33.children.length === 0) {
+        //     box33.style.display = "none";
+        // }
+        </script> 
+        <style>
+            :root {
+              --bg: #111;
+              --panel: #d30707;
+              --border: #272727;
+              --text-main: #e6e6e6;
+              --text-soft: #c4c4c4;
+              --accent: #4da6ff;
+            }
+            /* SIDEBAR */
+            #sidebar {
+              width: 100%;
+              height: calc(100vh - 70px);
+              /* background: var(--panel); */
+              border-left: 1px solid var(--border);
+              display: flex;
+              flex-direction: column;
+              border-radius: 20px;
+            }
+          
+            /* HEADER */
+            #header11 {
+              padding: 10px;
+              border-bottom: 1px solid rgba(197, 197, 197, 0.968);
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+              height: 30PX;
+            }
+          
+            #header11 h2 {
+              margin: 0;
+              font-size: 19px;
+              font-weight: 600;
+              color: var(--text-main);
+            }
+          
+            #new-chat {
+              padding: 8px 14px;
+              background: #e35801;
+              border: 1px solid var(--border);
+              border-radius: 25px;
+              font-size: 13px;
+              cursor: pointer;
+              color: var(--text-soft);
+              transition: 0.25s ease;
+            }
+          
+            #new-chat:hover {
+              background: #2f2f2f;
+            }
+          
+            /* GREETING */
+            #greeting {
+              padding: 20px;
+              color: var(--text-soft);
+              font-size: 15px;
+              border-bottom: 1px solid var(--border);
+            }
+          
+            /* CHAT BODY */
+            #chat-box {
+              flex: 1;
+              padding: 20px;
+              overflow-y: auto;
+              display: flex;
+              flex-direction: column;
+              gap: 18px;
+            }
+          
+            .msg {
+              padding: 14px;
+              background: #141414;
+              border: 1px solid var(--border);
+              border-radius: 6px;
+              font-size: 14px;
+              color: var(--text-main);
+              max-width: 85%;
+            }
+          
+            .user {
+              align-self: flex-end;
+              background: #1d1d1d;
+            }
+          
+            .ai {
+              align-self: flex-start;
+            }
+          
+            /* INPUT AREA */
+            #input-area {
+              padding: 20px;
+              border-top: 1px solid var(--border);
+              display: flex;
+              gap: 10px;
+            }
+          
+            #query2 {
+              flex: 1;
+              padding: 10px;
+              background: #ababab64;
+              border: 1px solid var(--border);
+              border-radius: 20px;
+              color: rgb(226, 226, 226);
+              font-size: 14px;
+              outline: none;
+            }
+          
+            #query2:focus {
+              border-color: 2px solid rgb(166, 166, 166);
+            }
+          
+            #send {
+                padding-top: 9px;
+              display: flex;
+              height: 40px;
+              width: 40px;
+              justify-content: center;
+              align-content: center;
+              background: orangered;
+              border: none;
+              border-radius: 20px;
+              font-weight: 600;
+              cursor: pointer;
+              color: #000000;
+              transition: 0.25s ease;
+              rotate: -35deg;
+            }
+          
+            #send:hover {
+              /* background: #72bcff; */
+            }
+          </style>  
+          
+          <script>
+            const chatBox = document.getElementById("chat-box");
+            const queryInput = document.getElementById("query");
+            const sendBtn = document.getElementById("send");
+            const newChatBtn = document.getElementById("new-chat");
+          
+            function addMessage(text, type) {
+              const div = document.createElement("div");
+              div.className = "msg " + type;
+              div.textContent = text;
+              chatBox.appendChild(div);
+              chatBox.scrollTop = chatBox.scrollHeight;
+            }
+          
+            // SEND MESSAGE
+            async function handleSend() {
+              const prompt = queryInput.value.trim();
+              if (!prompt) return;
+          
+              addMessage(prompt, "user");
+              queryInput.value = "";
+          
+              addMessage("Thinking…", "ai");
+              const loadingMessage = chatBox.lastChild;
+          
+              try {
+                const resp = await fetch("https://api-inference.huggingface.co/models/gpt2", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({ inputs: prompt, options: { wait_for_model: true } })
+                });
+          
+                let data;
+                try { data = await resp.json(); }
+                catch { data = null; }
+          
+                const answer = data?.[0]?.generated_text || "I couldn’t generate a response.";
+                loadingMessage.textContent = answer;
+          
+              } catch {
+                loadingMessage.textContent = "Connection error — but chat continues.";
+              }
+            }
+          
+            sendBtn.addEventListener("click", handleSend);
+            queryInput.addEventListener("keypress", (e) => {
+              if (e.key === "Enter") handleSend();
+            });
+          
+            // NEW CHAT → Clears all messages
+            newChatBtn.addEventListener("click", () => {
+              chatBox.innerHTML = "";
+            });
+          </script>      
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+    
+</body>
+</html>
