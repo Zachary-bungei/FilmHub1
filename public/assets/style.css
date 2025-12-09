@@ -1046,3 +1046,15 @@ textarea {
 #earchdiv span:hover{
   color: orange;
 }
+.sessiondiv{
+  position: fixed;
+  display: flex;
+  padding: 20px;
+  border-radius: 4px;
+  background-color: red;
+  color: white;
+  height: 100px;
+  width: 140px;
+  top: calc(50vh - 50px);
+  left: calc(50% - 70px);
+}
