@@ -258,7 +258,7 @@ function fileToBase64(file) {
 
 document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
 
-  const formData = new FormData(form);
+  const formData = new FormData(form2);
   
   // Word count validations
   const title = document.getElementById("title").value.trim();
