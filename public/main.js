@@ -100,7 +100,16 @@ async function doSignup(data) {
       username: data.username,  
       password: data.password
     });
-    // console.log("Signup", result);
+     console.log("Signup:", result);
+    if(result.success == true){
+         errform("Created account successfully");
+         setTimeout(() => {
+            window.location.replace("/assets.index.html");
+
+        }, 1000);
+    }else{
+        errform("Failed to create account");
+    }    
   }
 async function doLogin(data) {
     const result = await sendData("login", {
@@ -108,7 +117,15 @@ async function doLogin(data) {
       username: data.username,
       password: data.password
     });
-    // console.log("login", result);
+    console.log("Login:", result);
+    if(result.success == true){
+         errform(" login successfully");
+         setTimeout(() => {
+            window.location.replace("/assets.index.html");
+        }, 1000);
+    }else{
+        errform("Failed to login");
+    } 
   }
 async function sendData(action1, data = {}) {
    try {
