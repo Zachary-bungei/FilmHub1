@@ -86,7 +86,11 @@ document.getElementById('SignBtn').addEventListener('click', () => {
 
     // If all validations pass, send data
     // sendData(data);
-    doSignup(data);
+    if(LogMode == true){
+        doLogin(data);
+    }else{
+       doSignup(data);
+    }
 });
 
 // Function to send data to main.php
@@ -95,25 +99,23 @@ async function doSignup(data) {
       email: data.email,
       password: data.password
     });
-    console.log("Result:", result);
-    console.log("Signup:", JSON.stringify({result}));
+    console.log("Signup", result));
   }
 async function doLogin(data) {
     const result = await sendData("login", {
       email: data.email,
       password: data.password
     });
-    console.log("Result:", result);
-    console.log("login:", JSON.stringify({result}));
+    console.log("login", result));
   }
-async function sendData(action, data = {}) {
+async function sendData(action1, data = {}) {
    try {
        const response = await fetch("https://filmhub-x7on.onrender.com", {
          method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ action, data })
+          body: JSON.stringify({ action = action1, data })
         });
     
         const result = await response.json();
