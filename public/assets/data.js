@@ -276,14 +276,14 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   // PDF validation
   const pdfFile = document.getElementById("pdf");
   if (pdfFile?.type && pdfFile.type !== "application/pdf") {
-      return alert("PDF must be a PDF file");
+      // return alert("PDF must be a PDF file");
     }
 
    pdfFile = await fileToBase64(pdfFile) || null;
 
   // Banner validation
   const bannerFile = document.getElementById("banner");
-  if(bannerFile && !bannerFile.type.startsWith("image/")) return alert("Banner must be an image file");
+  // if(bannerFile && !bannerFile.type.startsWith("image/")) return alert("Banner must be an image file");
   bannerFile = await fileToBase64(bannerFile) || null;
 
   // Send data to server
