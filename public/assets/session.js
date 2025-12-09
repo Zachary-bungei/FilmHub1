@@ -11,7 +11,7 @@ async function checkSession() {
     if (!res.ok) {
       const errorText = await res.text();
       console.error(`Server error: ${res.status} ${res.statusText}`, errorText);
-      statusEl. = `Error: Server responded with status ${res.status}`;
+      statusEl.innerTHML = `Error: Server responded with status ${res.status}`;
       return;
     }
 
