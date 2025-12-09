@@ -100,7 +100,7 @@ async function doSignup(data) {
       username: data.username,  
       password: data.password
     });
-    console.log("Signup", result);
+    // console.log("Signup", result);
   }
 async function doLogin(data) {
     const result = await sendData("login", {
@@ -108,7 +108,7 @@ async function doLogin(data) {
       username: data.username,
       password: data.password
     });
-    console.log("login", result);
+    // console.log("login", result);
   }
 async function sendData(action1, data = {}) {
    try {
