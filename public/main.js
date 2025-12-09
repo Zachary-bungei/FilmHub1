@@ -115,7 +115,7 @@ async function sendData(action1, data = {}) {
           headers: {
             "Content-Type": "application/json"
           },
-          body: JSON.stringify({ action = action1, data })
+          body: JSON.stringify({ action: action1, data })
         });
     
         const result = await response.json();
