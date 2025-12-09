@@ -110,7 +110,7 @@ async function doLogin(data) {
   }
 async function sendData(action1, data = {}) {
    try {
-       const response = await fetch("https://filmhub-x7on.onrender.com", {
+       const response = await fetch("https://filmhub-x7on.onrender.com/api", {
          method: "POST",
           headers: {
             "Content-Type": "application/json"
