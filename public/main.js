@@ -98,10 +98,10 @@ async function doSignup(data) {
   
     console.log("Signup:", result);
   }
-async function sendData(data) {
-    try {
-        const response = await fetch("/assets.server.js", {
-          method: "POST",
+async function sendData(action, data = {}) {
+   try {
+       const response = await fetch("https://filmhub-x7on.onrender.com/s", {
+         method: "POST",
           headers: {
             "Content-Type": "application/json"
           },
@@ -118,27 +118,28 @@ async function sendData(data) {
 //       .finally(() => {
 //         document.getElementById("SignBtn").disabled = false;
 //   });
+    
 }
 
 
 
-async function sendAction(action, data = {}) {
-    try {
-      const response = await fetch("http://localhost:3000/api", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ action, data })
-      });
+// async function sendAction(action, data = {}) {
+//     try {
+//       const response = await fetch("https://filmhub-x7on.onrender.com", {
+//         method: "POST",
+//         headers: {
+//           "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({ action, data })
+//       });
   
-      const result = await response.json();
-      return result;
-    } catch (err) {
-      console.error("Request failed:", err);
-      return { success: false, error: err.message };
-    }
-  }
+//       const result = await response.json();
+//       return result;
+//     } catch (err) {
+//       console.error("Request failed:", err);
+//       return { success: false, error: err.message };
+//     }
+//   }
   
 function errform(error) {
      const ErrP = document.getElementById('ErrForm');
