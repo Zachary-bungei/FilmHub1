@@ -242,7 +242,7 @@ function timeAgo(dateInput) {
 }
 // console.log(timeAgo("2025-01-28T12:00:00"));
 
-// const form2 = document.getElementById("ideaForm");
+const form2 = document.getElementById("ideaForm");
 
 function wordCount(str) {
   return str.trim().split(/\s+/).length;
