@@ -95,7 +95,7 @@ async function doSignup(data) {
       email: data.email,
       password: data.password
     });
-    
+    console.log("Result:", result);
     console.log("Signup:", JSON.stringify({result}));
   }
 async function doLogin(data) {
@@ -103,7 +103,7 @@ async function doLogin(data) {
       email: data.email,
       password: data.password
     });
-    
+    console.log("Result:", result);
     console.log("login:", JSON.stringify({result}));
   }
 async function sendData(action, data = {}) {
