@@ -96,7 +96,7 @@ async function doSignup(data) {
       password: data.password
     });
     
-    console.log("Signup:", result);
+    console.log("Signup:", JSON.stringify({result}));
   }
 async function doLogin(data) {
     const result = await sendData("login", {
@@ -104,7 +104,7 @@ async function doLogin(data) {
       password: data.password
     });
     
-    console.log("login:", result);
+    console.log("login:", JSON.stringify({result}));
   }
 async function sendData(action, data = {}) {
    try {
