@@ -3,7 +3,7 @@ async function checkSession() {
     const res = await fetch("https://filmhub-x7on.onrender.com/check-session");
     const data = await res.json();
 
-    const statusEl = document.getElementById("status");
+    const statusEl = document.getElementById("sesmsg");
 
     if (data.loggedIn) {
       statusEl.textContent = `Logged in as ${data.user.email}`;
@@ -19,16 +19,16 @@ async function checkSession() {
 // Run on page load
 window.addEventListener("DOMContentLoaded", checkSession);
 
-document.getElementById("logoutBtn").addEventListener("click", async () => {
+document.getElementById("Logoutid").addEventListener("click", async () => {
   try {
     const res = await fetch("https://filmhub-x7on.onrender.com/logout", { method: "POST" });
     const data = await res.json();
 
     if (data.success) {
       // Hide protected content
-      document.getElementById("content").style.display = "none";
+      // document.getElementById("sesmsg").style.display = "none";
       // Show session ended message
-      const deniedEl = document.getElementById("accessDenied");
+      const deniedEl = document.getElementById("sesmsg");
       deniedEl.textContent = "Session ended. Please log in again.";
       deniedEl.style.display = "block";
     }
