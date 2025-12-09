@@ -33,7 +33,7 @@ async function checkSession() {
 
   } catch (err) {
     console.error("Error checking session:", err);
-    document.getElementById("status").textContent = "Error checking session";
+    document.getElementById("status90").textContent = "Error checking session";
   }
 }
 
