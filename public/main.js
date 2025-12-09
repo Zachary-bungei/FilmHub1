@@ -1,4 +1,4 @@
-const MAX_ATTEMPTS = 5; 
+const MAX_ATTEMPTS = 50; 
 let LogMode = true; 
 
 function getInputData() {
