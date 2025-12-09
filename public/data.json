@@ -1,0 +1,140 @@
+{
+    "system_id": "movie_seller",
+    "account_role": "buyer",
+    "features": {
+      "dashboard": {
+        "themes": "light",
+        "credentials": {
+          "username": "account",
+          "email": "zacha@gmail.com",
+          "date": "2020-4-28T12:00:00",
+          "rate": 5,
+          "resume": ""
+        },
+        "about": "string goes here"
+      },
+      "chats": {
+        "user1": []
+      },
+      "ideas": [
+        {
+          "onwer": "zaxly",
+          "ownerprofile": "",
+          "name": "D war",
+          "viewer": ["mine", "post"],
+          "category": "action",
+          "rating": 5,
+          "banner": "base64",
+          "hook": "one leap for a man, a giant leap for humanity",
+          "synopsis": "ddd",
+          "date": "2025-01-28T12:00:00",
+          "available": true
+        },
+        {
+          "onwer": "zaxly",
+          "ownerprofile": "",
+          "name": "The read notice",
+          "viewer": ["mine", "post"],
+          "category": "adventure",
+          "rating": 5,
+          "banner": "base64",
+          "hook": "Story of forgoted young start",
+          "synopsis": "ddd",
+          "date": "2024-08-28T12:00:00",
+          "available": true
+        },
+        {
+          "onwer": "zaxly",
+          "ownerprofile": "",
+          "name": "The exort",
+          "viewer": ["mine", "post"],
+          "category": "romance",
+          "rating": 2,
+          "banner": "base64",
+          "hook": "The jangle",
+          "synopsis": "no synopisis now",
+          "date": "2025-11-28T12:00:00",
+          "available": true
+        },
+        {
+          "onwer": "zaxly",
+          "ownerprofile": "",
+          "name": "The read notice",
+          "viewer": ["mine", "post"],
+          "category": "comedy",
+          "rating": 5,
+          "banner": "base64",
+          "hook": "Story of forgoted young start",
+          "synopsis": "ddd",
+          "date": "2024-08-28T12:00:00",
+          "available": true
+        },
+        {
+          "onwer": "zaxly",
+          "ownerprofile": "",
+          "name": "The read notice",
+          "viewer": ["mine", "post"],
+          "category": "fantasy",
+          "rating": 5,
+          "banner": "base64",
+          "hook": "Story of forgoted young start",
+          "synopsis": "ddd",
+          "date": "2024-08-28T12:00:00",
+          "available": true
+        },
+        {
+          "onwer": "zaxly",
+          "ownerprofile": "",
+          "name": "The read notice",
+          "viewer": ["mine", "post"],
+          "category": "mystery",
+          "rating": 5,
+          "banner": "base64",
+          "hook": "Story of forgoted young start",
+          "synopsis": "ddd",
+          "date": "2024-08-28T12:00:00",
+          "available": true
+        },
+        {
+          "onwer": "zaxly",
+          "ownerprofile": "",
+          "name": "The read notice",
+          "viewer": ["mine", "post"],
+          "category": "horror",
+          "rating": 5,
+          "banner": "base64",
+          "hook": "Story of forgoted young start",
+          "synopsis": "ddd",
+          "date": "2024-08-28T12:00:00",
+          "available": true
+        },
+        {
+          "onwer": "zaxly",
+          "ownerprofile": "",
+          "name": "The read notice",
+          "viewer": ["mine", "post"],
+          "category": "drama",
+          "rating": 5,
+          "banner": "base64",
+          "hook": "Story of forgoted young start",
+          "synopsis": "ddd",
+          "date": "2024-08-28T12:00:00",
+          "available": true
+        },
+        {
+          "onwer": "zaxly",
+          "ownerprofile": "",
+          "name": "The read notice",
+          "viewer": ["mine", "post"],
+          "category": " science-fiction",
+          "rating": 5,
+          "banner": "base64",
+          "hook": "Story of forgoted young start",
+          "synopsis": "ddd",
+          "date": "2024-08-28T12:00:00",
+          "available": true
+        }
+      ]
+    }
+  }
+ 
