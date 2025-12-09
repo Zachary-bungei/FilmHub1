@@ -275,7 +275,10 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
     
   // PDF validation
   const pdfFile = document.getElementById("pdf");
-  if(pdfFile && pdfFile.type !== "application/pdf") return alert("PDF must be a PDF file");
+  if (pdfFile?.type && pdfFile.type !== "application/pdf") {
+      return alert("PDF must be a PDF file");
+    }
+
    pdfFile = await fileToBase64(pdfFile) || null;
 
   // Banner validation
