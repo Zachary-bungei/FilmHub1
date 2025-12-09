@@ -242,10 +242,18 @@ function timeAgo(dateInput) {
 }
 // console.log(timeAgo("2025-01-28T12:00:00"));
 
-const form = document.getElementById("ideaForm");
+// const form2 = document.getElementById("ideaForm");
 
 function wordCount(str) {
   return str.trim().split(/\s+/).length;
+}
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 }
 
 document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
@@ -253,30 +261,38 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   const formData = new FormData(form);
   
   // Word count validations
-  const title = formData.get("title");
-  const hook = formData.get("hook");
-  const describe = formData.get("describe");
+  const title = document.getElementById("title").value.trim();
+  const hook = document.getElementById("hook").value.trim();
+  const describe = document.getElementById("description").value.trim();
 
-  if(wordCount(title) > 6) return alert("Title must be max 6 words");
-  if(wordCount(hook) > 10) return alert("Hook must be max 10 words");
-  if(wordCount(describe) > 100) return alert("Description must be max 100 words");
+  if(wordCount(title) > 6 || wordCount(title) < 1) return alert("Title must be max 6 words");
+  if(wordCount(hook) > 10 || wordCount(title) < 1) return alert("Hook must be max 10 words");
+  if(wordCount(describe) > 100 || wordCount(title) < 1) return alert("Description must be max 100 words");
 
   // Rate validation (0-5)
-  const rateValue = parseFloat(formData.get("rate"));
-  if(rateValue < 0 || rateValue > 5) return alert("Rate must be between 0 and 5");
-
+  // const rateValue = parseFloat(document.getElementById("rate"));
+  // if(rateValue < 0 || rateValue > 5) return alert("Rate must be between 0 and 5");
+    
   // PDF validation
-  const pdfFile = document.getElementById.get("pdf");
+  const pdfFile = document.getElementById("pdf");
   if(pdfFile && pdfFile.type !== "application/pdf") return alert("PDF must be a PDF file");
+   pdfFile = await fileToBase64(pdfFile) || null;
 
   // Banner validation
   const bannerFile = document.getElementById("banner");
   if(bannerFile && !bannerFile.type.startsWith("image/")) return alert("Banner must be an image file");
+  bannerFile = await fileToBase64(bannerFile) || null;
 
   // Send data to server
   const response = await fetch("https://filmhub-x7on.onrender.com/submit-idea", {
     method: "POST",
-    body: formData
+    body: {
+       title,
+       hook,
+       describe,
+       pdf: pdfBase64,
+       banner: bannerBase64 
+    }
   });
 
   const result = await response.json();
