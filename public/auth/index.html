@@ -1,0 +1,72 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>Login</title>
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="../theme.css">
+
+</head>
+<body>
+    <div class="mn_dv2" id="mn_dv2">
+        <div class="login_div" id="login_div">
+                <div id="zx_register_form">
+
+                    <div class="zx_register_logo"><img src="../materials/filmhub_logo.png" alt="" width="60px" height="60px"></div>
+                    <h2 class="zx_register_title">Register to FilmHub
+                    </h2>
+                    <hr class="zx_register_line" />
+                    
+                    <div class="mode-container">
+                        <div class="slider" id="slider"></div>
+                    
+                        <button id="loginBtn" class="tab-button">Login</button>
+                        <button id="signupBtn" class="tab-button">Sign Up</button>
+                    </div>
+
+                    
+                    <div class="zx_register_field register_field1">
+                    <span class="zx_icon material-icons">mail</span>
+                    <input type="email" placeholder="email" class="zx_input" id="SignEmail"/>
+                    </div>
+                
+                    <div class="zx_register_field">
+                    <span class="zx_icon material-icons">person</span>
+                    <input type="text" placeholder="username" class="zx_input" />
+                    </div>
+                
+                    <div class="zx_register_field ">
+                    <span class="zx_icon material-icons">lock</span>
+                    <input type="password" placeholder="password" class="zx_input" id="pwd1" />
+                    <span class="zx_eye_icon material-icons" id="PwdToggle">visibility_off</span>
+                    </div>
+                
+                    <div class="zx_register_field">
+                    <span class="zx_icon material-icons">lock</span>
+                    <input type="password" placeholder="confirms" class="zx_input"  id="pwd2"/>
+                    </div>
+                
+                    <label class="zx_terms">
+                    <input type="checkbox" checked />
+                    <span><span class="material-icons" style="color:#ff5e57;"> </span> Agree with our terms of service. </span>  <br>
+                    <p id="termsLnk"> Forgot password</p>
+                    </label>
+                    <div class="LogMsg">
+                        <span class="material-icons">warning</span>
+                        <p id="ErrForm">All fields are required</p>
+                    </div>
+                    <button class="zx_login_btn" id="SignBtn">Submit</button>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
