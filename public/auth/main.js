@@ -184,7 +184,7 @@
 // }
 // });
 
-const MAX_ATTEMPTS = 200; 
+const MAX_ATTEMPTS = 800; 
 let LogMode = true; 
 
 function getInputData() {
