@@ -1,0 +1,235 @@
+
+body{
+    background-color: rgb(8, 0, 51);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#mn_dv2{
+    display: flex;
+    flex-direction: column;
+    overflow: scroll;
+    background-color: rgba(125, 117, 117, 0);
+    width: 35%;
+    /* border-left: 1px solid orangered; */
+}
+#mn_dv2{
+    margin: 0px;
+}
+#mn_dv2{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    overflow: hidden;
+    place-self: center;
+    background-color: rgb(3, 2, 36);
+    border-radius: 25px;
+}
+#login_div{
+    background-color: #01053dcf;
+    display: flex;
+    place-content: center;
+    height: 90vh;
+    overflow: scroll;
+    margin-top: 10px;
+    border: 1px solid orangered;
+    border-radius: var(--border-radius);
+}
+#zx_register_form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(102, 51, 153, 0);
+    /* background-color: #291f4000; */
+    height: calc(100vh - 90px);
+    padding: 40px 25px;
+    border-radius: 15px;
+    color: #d7d7d7;
+    height: 790px;
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); */
+    width: 90%;
+    /* max-width: 450px;
+    min-width: 350px; */
+    
+
+  }
+  .zx_register_logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px auto;
+    /* background: linear-gradient(45deg, #5b00e6, #d15cff); */
+    color: white;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    line-height: 60px;
+    border-radius: 50%;
+  }
+  .zx_register_title {
+    text-align: center;
+    font-weight: bold;
+    color: #939393;
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .zx_register_line {
+    border: none;
+    height: 2px;
+    background-color:  #939393;
+    width: 180px;
+    margin: 0 auto 25px auto;
+    border-radius: var(--border-radius);
+  }
+
+  .zx_icon {
+    margin-right: 12px;
+    font-size: 20px;
+    color: #ff5e57;
+  }
+
+  .material-icons {
+    font-size: 20px;
+    vertical-align: middle;
+  }
+
+  .zx_input {
+    flex: 1;
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: var(--base-font-size);
+    color: #c7cac7;
+    font-weight: 600;
+    box-shadow: none;
+  }
+
+  .zx_input:focus {
+    outline: none;
+    box-shadow: none;
+  }
+
+  .zx_eye_icon {
+    font-size: 20px;
+    cursor: pointer;
+    color: #ff5e57;
+  }
+
+  .zx_login_btn {
+    width: 100%;
+    background: linear-gradient(to right, #7751e9, #fd821e);
+    border: none;
+    color: #c8cbc9;
+    padding: 14px;
+    font-size: var(--base-font-size);
+    font-weight: bold;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+
+  .zx_login_btn:hover {
+    opacity: 0.9;
+  }
+  .mode-container {
+    width: 90%;
+    margin: 40px auto;
+    display: flex;
+    position: relative;
+    background: #969494c9;
+    border-radius: 30px;
+    padding: 5px;
+  }
+  
+  .tab-button {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    z-index: 2;
+    cursor: pointer;
+    color: rgb(231, 231, 231);
+  }
+  
+  .slider {
+    position: absolute;
+    width: 46%;
+    height: 90%;
+    background: #c45704; /* green sliding highlight */
+    border-radius: 30px;
+    top: 5%;
+    left: 1%;
+    transition: transform 0.4s ease;
+  }
+  .register_field1{
+    margin-top: 60px;
+  }
+  .zx_register_field {
+    display: flex;
+    align-items: center;
+    border: 2px solid #474645;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background: transparent;
+    font-weight: 200;
+  }
+  .zx_terms {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    color: #b8bbb9;
+    margin-bottom: 30px;
+  }
+
+  .zx_terms input {
+    margin-right: 10px;
+    accent-color: #ff5e57;
+    transform: scale(1.2);
+  }
+  @media only screen and (max-width: 640px){
+     #mn_dv2{
+      width: 90%!important;
+      margin: 0px;
+      padding: 2%;
+    }
+  }
+  @media only screen and (min-width: 640px) and (min-width: 1024){
+    #mn_dv2{
+      width: 570px;
+      max-width: 570px;
+      min-width: 500px;
+      margin: 0px;
+      padding: 2%;
+    }
+  }
+  @media only screen and (max-width: 1024){
+    #mn_dv2{
+      width: 570px;
+      max-width: 570px;
+      min-width: 500px;
+      margin: 0px;
+      padding: 2%;
+    }
+  }
+  .LogMsg{
+    background-color: red;
+    display: flex;
+    font-size: var(--base-font-size);
+    background-color: rgb(255, 0, 0);
+    margin-bottom: 6px;
+    border-radius: 20px;
+    border: 1px solid rgb(216, 216, 216);
+    outline: 2px solid  red;
+    height: 30px;
+  }
+  #ErrForm{
+    font-weight: bold;
+    margin-top: 8px;
+    color: rgb(216, 216, 216);
+  }
+  .LogMsg span{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 4px;
+  }
