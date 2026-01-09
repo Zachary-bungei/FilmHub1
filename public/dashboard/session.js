@@ -18,3 +18,20 @@ async function checkSession() {
   }
 
  checkSession();
+
+app.post("/logout", (req, res) => {
+  req.session.destroy(err => {
+    if (err) {
+      return res.status(500).json({ message: "Logout failed" });
+    }
+
+    res.clearCookie("connect.sid"); // default cookie name
+    res.json({ loggedOut: true });
+  });
+    if (data.loggedOut) {
+        // document.getElementById("logoutBtn").style.display = "none";
+        alert("logout successfully");
+        location.reload(); // optional, but clean
+        
+    }
+});
