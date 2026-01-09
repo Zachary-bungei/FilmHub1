@@ -17,6 +17,4 @@ async function checkSession() {
     }
   }
 
-  window.addEventListener("DOMContentLoaded", () => {
-    checkSession();
-  });
+ checkSession();
