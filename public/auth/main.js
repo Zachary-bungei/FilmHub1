@@ -380,7 +380,7 @@ async function checkSession() {
     //   console.log("Profile image:", data.user.profile_img);
     }
   }
-
+checkSession();
   window.addEventListener("DOMContentLoaded", () => {
     checkSession();
   });
