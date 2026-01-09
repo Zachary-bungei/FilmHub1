@@ -19,19 +19,21 @@ async function checkSession() {
 
  checkSession();
 
-app.post("/logout", (req, res) => {
-  req.session.destroy(err => {
-    if (err) {
-      return res.status(500).json({ message: "Logout failed" });
-    }
-
-    res.clearCookie("connect.sid"); // default cookie name
-    res.json({ loggedOut: true });
+async function logout() {
+  const res = await fetch("https://filmhub-x7on.onrender.com/logout", {
+    method: "POST",
+    credentials: "include",
+    headers: {
+      "Content-Type": "application/json",
+    },
   });
-    if (data.loggedOut) {
-        // document.getElementById("logoutBtn").style.display = "none";
-        alert("logout successfully");
-        location.reload(); // optional, but clean
-        
-    }
-});
+
+  const data = await res.json();
+  console.log("Logout:", data);
+
+  if (data.loggedOut) {
+    // document.getElementById("logoutBtn").style.display = "none";
+      alert("logout successfully");
+    location.reload(); // optional, but clean
+  }
+}
