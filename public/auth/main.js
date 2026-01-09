@@ -365,7 +365,7 @@ signupBtn.addEventListener("click", () => {
 async function checkSession() {
     const res = await fetch("https://filmhub-x7on.onrender.com/checksession", {
       method: "POST",
-      credentials: "include", // 👈 sends cookies
+      // credentials: "include", // 👈 sends cookies
       headers: {
         "Content-Type": "application/json",
       },
@@ -381,6 +381,3 @@ async function checkSession() {
     }
   }
 checkSession();
-  window.addEventListener("DOMContentLoaded", () => {
-    checkSession();
-  });
