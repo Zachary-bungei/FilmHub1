@@ -108,10 +108,7 @@ async function doSignup(data) {
      console.log("Signup:", result);
     if(result.success == true){
          errform("check_circle", "green", "Created account successfully");
-         setTimeout(() => {
-            window.location.replace("/assets");
-
-        }, 1000);
+         window.location.replace("/verify");
     }else{
         errform("Failed to create account");
         SignBtn.disable = false;
@@ -127,9 +124,7 @@ async function doLogin(data) {
     console.log("Login:", result);
     if(result.success == true){
          errform("check_circle", "green", " login successfully");
-         setTimeout(() => {
-            window.location.replace("/assets");
-        }, 1000);
+         window.location.replace("/dashboard");
     }else{
         errform("warning", "red","Failed to login");
         SignBtn.disable = false;
@@ -192,7 +187,7 @@ signupBtn.addEventListener("click", () => {
 async function checkSession() {
     const res = await fetch("https://filmhub-x7on.onrender.com/checksession", {
       method: "POST",
-      // credentials: "include", // 👈 sends cookies
+      credentials: "include", // 👈 sends cookies
       headers: {
         "Content-Type": "application/json",
       },
