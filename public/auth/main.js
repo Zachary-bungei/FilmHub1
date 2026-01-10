@@ -110,7 +110,7 @@ async function doSignup(data) {
          errform("check_circle", "green", "Created account successfully");
          window.location.replace("/verify");
     }else{
-        errform("Failed to create account");
+        errform("warning", "red", "Failed to create account");
         SignBtn.disable = false;
         SignBtn.innerText = "Submit";
     }    
