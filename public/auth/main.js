@@ -159,7 +159,7 @@ function errform(icon1, bgcolor, error) {
     const ErrP = document.getElementById('ErrForm');
     const errorbox = document.getElementById('LogMsg');
     const ErrIocn = document.getElementById('errIocn');
-    errorbox.style.borderColor = bgcolor;
+    errorbox.style.outlineColor = bgcolor;
     errorbox.style.backgroundColor = bgcolor;
     ErrIocn.innerText = icon1;
     ErrP.textContent = error;
