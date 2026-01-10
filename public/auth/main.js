@@ -8,12 +8,12 @@ function getInputData() {
 
     if(LogMode){
         if (!email || !password) {
-            errform("Email or password is missing!");
+            errform("warning", "red", "Email or password is missing!");
             return null;
         }
     }else{
         if (!email || !password || !confirmPassword) {
-            errform("All fields are required!");
+            errform("warning", "red", "All fields are required!");
             return null;
         }
     }
@@ -25,18 +25,18 @@ function validateInput(data) {
     // Email basic regex check
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailRegex.test(data.email)) {
-        errform("Invalid email format!");
+        errform("warning", "red", "Invalid email format!");
         return false;
     }
 
     // Password length and confirmation match
     if (data.password.length < 8 || data.password.length > 20) {
-        errform("Password must be at least 6 characters!");
+        errform("warning", "red", "Password must be at least 6 characters!");
         return false;
     }
     if(!LogMode){
         if (data.password !== data.confirmPassword) {
-            errform("Passwords don't match!");
+            errform("warning", "red", "Passwords don't match!");
             return false;
         }
     }
@@ -56,7 +56,7 @@ function checkAttempts() {
     }
 
     if (attemptsData.attempts >= MAX_ATTEMPTS) {
-        errform("Maximum attempts reached for today.");
+        errform("warning", "red", "Maximum attempts reached for today.");
         return false;
     }
 
@@ -107,7 +107,7 @@ async function doSignup(data) {
     });
      console.log("Signup:", result);
     if(result.success == true){
-         errform("Created account successfully");
+         errform("check_circle", "green", "Created account successfully");
          setTimeout(() => {
             window.location.replace("/assets");
 
@@ -126,12 +126,12 @@ async function doLogin(data) {
     });
     console.log("Login:", result);
     if(result.success == true){
-         errform(" login successfully");
+         errform("warning", "green", " login successfully");
          setTimeout(() => {
             window.location.replace("/assets");
         }, 1000);
     }else{
-        errform("Failed to login");
+        errform("warning", "green","Failed to login");
         SignBtn.disable = false;
         SignBtn.innerText = "Submit";
     } 
@@ -160,14 +160,18 @@ async function sendData(action1, data = {}) {
 }
 
 
-function errform(error) {
-     const ErrP = document.getElementById('ErrForm');
-        ErrP.textContent = error;
-        ErrP.style.visibility = "visible";
-
-        setTimeout(() => {
-            ErrP.style.visibility = "hidden";
-        }, 10000);
+function errform(icon1, bgcolor, error) {
+    const ErrP = document.getElementById('ErrForm');
+    const errorbox = document.getElementById('LogMsg');
+    const ErrIocn = document.getElementById('errIocn');
+    errorbox.style.borderColor = bgcolor;
+    errorbox.style.backgroundColor = bgcolor;
+    ErrIcon.innerText = icon1;
+    ErrP.textContent = error;
+    errorbox.style.visibility = "visible";
+    setTimeout(() => {
+        errorbox.style.visibility = "hidden";
+    }, 10000);
 }
 
 
