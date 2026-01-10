@@ -213,6 +213,7 @@ body{
     }
   }
   .LogMsg{
+    visibility: hidden;
     background-color: red;
     display: flex;
     font-size: var(--base-font-size);
