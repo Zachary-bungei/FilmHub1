@@ -69,24 +69,24 @@ function checkAttempts() {
 // Handle submit button click
 const SignBtn = document.getElementById('SignBtn');
 document.getElementById('SignBtn').addEventListener('click', () => {
+    SignBtn.innerText = "Submitting…";
     SignBtn.disable = true;
-    SignBtn.innerHTML = "Submitting..";
     const data = getInputData();
     if (!data){
         SignBtn.disable = false;
-        SignBtn.innerHTML = "Submit";
+        SignBtn.innerText = "Submit";
         return;
     }  // missing fields
 
     if (!validateInput(data)) {
         SignBtn.disable = false;
-        SignBtn.innerHTML = "Submit";
+        SignBtn.innerText = "Submit";
         return;
     }; // failed validation
 
     if (!checkAttempts()){
         SignBtn.disable = false;
-        SignBtn.innerHTML = "Submit";
+        SignBtn.innerText = "Submit";
         return;
     }; // exceeded attempts
 
@@ -115,7 +115,7 @@ async function doSignup(data) {
     }else{
         errform("Failed to create account");
         SignBtn.disable = false;
-        SignBtn.innerHTML = "Submit";
+        SignBtn.innerText = "Submit";
     }    
   }
 async function doLogin(data) {
@@ -133,7 +133,7 @@ async function doLogin(data) {
     }else{
         errform("Failed to login");
         SignBtn.disable = false;
-        SignBtn.innerHTML = "Submit";
+        SignBtn.innerText = "Submit";
     } 
   }
 async function sendData(action1, data = {}) {
