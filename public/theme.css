@@ -1,0 +1,43 @@
+:root {
+    /* 🎨 Brand Colors */
+    --primary-color: #FF5722;       /* Main brand color (orange) */
+    --accent-color: #cc6906;        /* Green for highlights or success */
+    --secondary-color: #9E9E9E;     /* Neutral gray for UI elements */
+    --error-color: #F44336;         /* Red for danger or error */
+    --warning-color: #FFC107;       /* Yellow for warnings */
+    --info-color: #2196F3;          /* Blue for informational messages */
+  
+    /* 🌚 Backgrounds & Surfaces */
+    --bg-color: #1e1e1e;            /* Main dark background */
+    --surface-color: #2c2c2c;       /* Cards, panels, modals */
+    --overlay-color: rgba(0, 0, 0, 0.6); /* Tinted overlay for images/videos */
+  
+    /* 📝 Text Colors */
+    --text-color: #f1f1f1;          /* Main readable text */
+    --text-muted: #cccccc;          /* Less important text */
+    --link-color: var(--primary-color); /* Links styled in primary */
+    --link-hover: #ff7043;          /* Hover color variation */
+  
+    /* 🧠 Typography */
+    --font-family: 'Poppins', sans-serif;
+    --heading-font-weight: 600;
+    --body-font-weight: 400;
+    --base-font-size: 1rem;
+    --heading-line-height: 1.2;
+    --body-line-height: 1.6;
+  
+    /* 📦 Spacing */
+    --padding: 1.5rem;
+    --margin: 1.5rem;
+    --gap: 1rem;
+    --border-radius: 15px;
+  
+    /* 🌗 Shadows & Borders */
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    --border-color: #3a3a3a;
+  
+    /* 💫 Transitions */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-smooth: 0.4s ease-in-out;
+  }
+  
