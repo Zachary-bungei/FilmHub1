@@ -126,12 +126,12 @@ async function doLogin(data) {
     });
     console.log("Login:", result);
     if(result.success == true){
-         errform("warning", "green", " login successfully");
+         errform("check_circle", "green", " login successfully");
          setTimeout(() => {
             window.location.replace("/assets");
         }, 1000);
     }else{
-        errform("warning", "green","Failed to login");
+        errform("warning", "red","Failed to login");
         SignBtn.disable = false;
         SignBtn.innerText = "Submit";
     } 
