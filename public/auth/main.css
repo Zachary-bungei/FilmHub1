@@ -23,6 +23,7 @@ body{
     overflow: hidden;
     place-self: center;
     background-color: rgb(3, 2, 36);
+    border: 1.4px solid rgb(247, 78, 16); 
     border-radius: 25px;
 }
 #login_div{
