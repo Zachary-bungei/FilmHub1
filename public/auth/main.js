@@ -166,7 +166,7 @@ function errform(icon1, bgcolor, error) {
     const ErrIocn = document.getElementById('errIocn');
     errorbox.style.borderColor = bgcolor;
     errorbox.style.backgroundColor = bgcolor;
-    ErrIcon.innerText = icon1;
+    ErrIocn.innerText = icon1;
     ErrP.textContent = error;
     errorbox.style.visibility = "visible";
     setTimeout(() => {
