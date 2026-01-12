@@ -25,7 +25,7 @@
                     </h2>
                     <hr class="zx_register_line" />
                     
-                    <div class="mode-container">
+                    <div class="mode-container" id="mode-container">
                         <div class="slider" id="slider"></div>
                     
                         <button id="loginBtn" class="tab-button">Login</button>
@@ -38,9 +38,9 @@
                     <input type="email" placeholder="email" class="zx_input" id="SignEmail"/>
                     </div>
                 
-                    <div class="zx_register_field">
-                    <span class="zx_icon material-icons">person</span>
-                    <input type="text" placeholder="username" class="zx_input" />
+                    <div class="zx_register_field" id="zx_register_field1">
+                        <span class="zx_icon material-icons">person</span>
+                        <input type="text" placeholder="username" class="zx_input" id="Us1Name" />
                     </div>
                 
                     <div class="zx_register_field ">
@@ -49,19 +49,19 @@
                     <span class="zx_eye_icon material-icons" id="PwdToggle">visibility_off</span>
                     </div>
                 
-                    <div class="zx_register_field">
+                    <div class="zx_register_field" id="zx_register_field2">
                     <span class="zx_icon material-icons">lock</span>
                     <input type="password" placeholder="confirms" class="zx_input"  id="pwd2"/>
                     </div>
                 
                     <label class="zx_terms">
-                    <input type="checkbox" checked />
-                    <span><span class="material-icons" style="color:#ff5e57;"> </span> Agree with our terms of service. </span>  <br>
-                    <p id="termsLnk"> Forgot password</p>
+                        <input type="checkbox"  id="checkboxTM">
+                        <span id="TMagree"> Agree with our terms of service. <a href="/./policy.html">read more</a></span> 
+                        <p id="termsLnk"> Forgot password</p>
                     </label>
                     <div class="LogMsg" id="LogMsg">
                         <span class="material-icons" id="errIocn">warning</span>
-                        <p id="ErrForm">All fields are required</p>
+                        <p id="ErrForm"></p>
                     </div>
                     <button class="zx_login_btn" id="SignBtn">Submit</button>
             </div>
