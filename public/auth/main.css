@@ -23,8 +23,8 @@ body{
     overflow: hidden;
     place-self: center;
     background-color: rgb(3, 2, 36);
-    border: 1.4px solid rgb(247, 78, 16); 
     border-radius: 25px;
+    border: 1px solid rgb(247, 78, 16); 
 }
 #login_div{
     background-color: #01053dcf;
@@ -33,6 +33,7 @@ body{
     height: 90vh;
     overflow: scroll;
     margin-top: 10px;
+    /* border: 1px solid orangered; */
     border-radius: var(--border-radius);
 }
 #zx_register_form {
@@ -213,8 +214,6 @@ body{
     }
   }
   .LogMsg{
-    visibility: hidden;
-    background-color: red;
     display: flex;
     font-size: var(--base-font-size);
     background-color: rgb(255, 0, 0);
@@ -223,6 +222,7 @@ body{
     border: 1px solid rgb(216, 216, 216);
     outline: 2px solid  red;
     height: 30px;
+    visibility: hidden;
   }
   #ErrForm{
     font-weight: bold;
