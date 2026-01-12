@@ -132,7 +132,7 @@ async function doSignin(data) {
         localStorage.setItem('refresh_token', data.refresh_token)
         localStorage.setItem('expires_at', data.expires_at)
 
-        
+        alert(data.access_token);
         const token = localStorage.getItem('access_token')
         await fetch('https://your-render.onrender.com/protected', {
           headers: {
