@@ -112,7 +112,7 @@ async function doSignup(data) {
     console.log("Signup:", result);
     if(result.success == true){
       errform("check_circle", "green", "Created account successfully");
-      window.location.replace("/verify");
+      // window.location.replace("/verify");
  }else{
      errform("warning", "red", "Failed to create account");
      SignBtn.disable = false;
