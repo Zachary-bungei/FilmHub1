@@ -128,10 +128,10 @@ async function doSignin(data) {
   console.log("Login:", result);
     if(result.success == true){
         errform("check_circle", "green", " login successfully");
-        localStorage.setItem('access_token', data.access_token)
+        localStorage.setItem('access_token', result.session.access_token)
         localStorage.setItem('refresh_token', data.refresh_token)
-        localStorage.setItem('expires_at', data.expires_at)
-
+        localStorage.setItem('expires_at', result.session.expires_at)
+        
         alert(data.access_token);
         const token = localStorage.getItem('access_token')
         await fetch('https://your-render.onrender.com/protected', {
@@ -286,11 +286,11 @@ window.addEventListener("DOMContentLoaded", () => {
 //   const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
 // )
 
-const refreshToken = localStorage.getItem('refresh_token')
+// const refreshToken = localStorage.getItem('refresh_token')
 
-const { data, error } =
-  await supabase.auth.refreshSession({ refresh_token: refreshToken })
+// const { data, error } =
+//   await supabase.auth.refreshSession({ refresh_token: refreshToken })
 
-if (!error) {
-  localStorage.setItem('access_token', data.session.access_token)
-}
+// if (!error) {
+//   localStorage.setItem('access_token', data.session.access_token)
+// }
