@@ -1,4 +1,4 @@
-import { createClient } from '@supabase/supabase-js'
+import { supabase } from './supabaseClient.js';
 const MAX_ATTEMPTS = 95; 
 let LogMode = true; 
 
@@ -280,7 +280,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 
-import { createClient } from '@supabase/supabase-js'
 
 const supabase = createClient(
   const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
