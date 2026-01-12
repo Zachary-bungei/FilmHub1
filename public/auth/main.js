@@ -1,3 +1,4 @@
+import { createClient } from '@supabase/supabase-js'
 const MAX_ATTEMPTS = 95; 
 let LogMode = true; 
 
@@ -126,7 +127,18 @@ async function doSignin(data) {
 
   console.log("Login:", result);
     if(result.success == true){
-         errform("check_circle", "green", " login successfully");
+        errform("check_circle", "green", " login successfully");
+        localStorage.setItem('access_token', data.access_token)
+        localStorage.setItem('refresh_token', data.refresh_token)
+        localStorage.setItem('expires_at', data.expires_at)
+
+        
+        const token = localStorage.getItem('access_token')
+        await fetch('https://your-render.onrender.com/protected', {
+          headers: {
+            Authorization: `Bearer ${token}`
+          }
+        });
          window.location.replace("/dashboard");
     }else{
         errform("warning", "red","Failed to login");
@@ -266,3 +278,20 @@ async function checkSession() {
 window.addEventListener("DOMContentLoaded", () => {
   checkSession();
 });
+
+
+import { createClient } from '@supabase/supabase-js'
+
+const supabase = createClient(
+  SUPABASE_URL,
+  SUPABASE_ANON_KEY
+)
+
+const refreshToken = localStorage.getItem('refresh_token')
+
+const { data, error } =
+  await supabase.auth.refreshSession({ refresh_token: refreshToken })
+
+if (!error) {
+  localStorage.setItem('access_token', data.session.access_token)
+}
