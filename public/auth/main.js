@@ -112,7 +112,7 @@ async function doSignup(data) {
     console.log("Signup:", result);
     if(result.success == true){
       errform("check_circle", "green", "Created account successfully");
-      // window.location.replace("/verify");
+      window.location.replace("/verify");
  }else{
      errform("warning", "red", "Failed to create account");
      SignBtn.disable = false;
@@ -124,7 +124,11 @@ async function doSignin(data) {
       email: data.email,
       password: data.password
   });
-
+    if (result.error) {
+        // handle login failure
+        errform("error", "red", result.error.message);
+        return;
+    }
   console.log("Login:", result);
     if(result.success == false){
         errform("warning", "red","Failed to login");
@@ -132,9 +136,9 @@ async function doSignin(data) {
         SignBtn.innerText = "Submit";
     }else{
         errform("check_circle", "green", " login successfully");
-        localStorage.setItem('access_token', result.session.access_token)
-        localStorage.setItem('refresh_token', data.refresh_token)
-        localStorage.setItem('expires_at', result.session.expires_at)
+        localStorage.setItem('access_token', result.access_token)
+        localStorage.setItem('refresh_token', result.refresh_token)
+        localStorage.setItem('expires_at', result.expires_at)
         
         alert(data.access_token);
         const token = localStorage.getItem('access_token')
