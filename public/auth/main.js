@@ -145,12 +145,15 @@ async function doSignin(data) {
         if(!token){
             alert("no token");
         }
-        await fetch('https://your-render.onrender.com/protected', {
+        let tttttt = await fetch('https://your-render.onrender.com/protected', {
+          method: 'GET',
           headers: {
-            Authorization: `Bearer ${token}`
-          }
+            Authorization: `Bearer ${token}`,
+          },
+          credentials: 'include',
         });
-         window.location.replace("/dashboard");
+        console.log(tttttt);
+        window.location.replace("/dashboard");
     } 
 }
 async function sendData(action, data ={}) {
