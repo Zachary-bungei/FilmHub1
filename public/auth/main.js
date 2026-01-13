@@ -141,7 +141,10 @@ async function doSignin(data) {
         localStorage.setItem('expires_at', result1.expires_at)
         
         alert(result1.access_token);
-        const token = localStorage.getItem('access_token')
+        let token = result1.access_token;
+        if(!token){
+            alert("no token");
+        }
         await fetch('https://your-render.onrender.com/protected', {
           headers: {
             Authorization: `Bearer ${token}`
