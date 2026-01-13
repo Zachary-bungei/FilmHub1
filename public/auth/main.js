@@ -126,7 +126,11 @@ async function doSignin(data) {
   });
 
   console.log("Login:", result);
-    if(result.success == true){
+    if(result.success == false){
+        errform("warning", "red","Failed to login");
+        SignBtn.disable = false;
+        SignBtn.innerText = "Submit";
+    }else{
         errform("check_circle", "green", " login successfully");
         localStorage.setItem('access_token', result.session.access_token)
         localStorage.setItem('refresh_token', data.refresh_token)
@@ -140,10 +144,6 @@ async function doSignin(data) {
           }
         });
          window.location.replace("/dashboard");
-    }else{
-        errform("warning", "red","Failed to login");
-        SignBtn.disable = false;
-        SignBtn.innerText = "Submit";
     } 
 }
 async function sendData(action, data ={}) {
