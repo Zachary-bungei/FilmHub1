@@ -120,25 +120,25 @@ async function doSignup(data) {
  }  
   }
 async function doSignin(data) {
-  const result = await sendData("login", {
+  const result1 = await sendData("login", {
       email: data.email,
       password: data.password
   });
-    if (result.error) {
+    if (result1.error) {
         // handle login failure
-        errform("error", "red", result.error.message);
+        errform("error", "red", result1.error.message);
         return;
     }
-  console.log("Login:", result);
-    if(result.success == false){
+  console.log("Login:", result1);
+    if(result1.success == false){
         errform("warning", "red","Failed to login");
         SignBtn.disable = false;
         SignBtn.innerText = "Submit";
     }else{
         errform("check_circle", "green", " login successfully");
-        localStorage.setItem('access_token', result.access_token)
-        localStorage.setItem('refresh_token', result.refresh_token)
-        localStorage.setItem('expires_at', result.expires_at)
+        localStorage.setItem('access_token', result1.access_token)
+        localStorage.setItem('refresh_token', result1.refresh_token)
+        localStorage.setItem('expires_at', result1.expires_at)
         
         alert(data.access_token);
         const token = localStorage.getItem('access_token')
