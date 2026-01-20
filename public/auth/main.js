@@ -1,4 +1,4 @@
-import { supabase } from './supabaseClient.js';
+// import { supabase } from './supabaseClient.js';
 const MAX_ATTEMPTS = 95; 
 let LogMode = true; 
 
@@ -140,21 +140,21 @@ async function doSignin(data) {
         localStorage.setItem('refresh_token', result1.refresh_token)
         localStorage.setItem('expires_at', result1.expires_at)
         
-        alert(result1.access_token);
-        let token = result1.access_token;
-        if(!token){
-            alert("no token");
-        }
-        let verrifysec = await fetch('https://your-render.onrender.com/protected', {
-          method: 'POST',      
-          headers: {
-            Authorization: `Bearer ${token}`,
-            'Content-Type': 'application/json'
-          },
-          credentials: 'include',
+        // alert(result1.access_token);
+        // let token = result1.access_token;
+        // if(!token){
+            // alert("no token");
+        // }
+        // let verrifysec = await fetch('https://your-render.onrender.com/protected', {
+        //   method: 'POST',      
+        //   headers: {
+        //     Authorization: `Bearer ${token}`,
+        //     'Content-Type': 'application/json'
+        //   },
+        //   credentials: 'include',
           // console.log(body: JSON.stringify({}));  
         });
-        console.log(verrifysec);
+        // console.log(verrifysec);
         window.location.replace("/dashboard");
     } 
 }
@@ -175,32 +175,9 @@ async function sendData(action, data ={}) {
         console.error("Request failed:", err);
         return { success: false, error: err.message };
       }
-      
-//       .finally(() => {
-//         document.getElementById("SignBtn").disabled = false;
-//   });
+    
 }
 
-
-
-// async function sendAction(action, data = {}) {
-//     try {
-//       const response = await fetch("https://filmhub-x7on.onrender.com/auth", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json"
-//         },
-//         body: JSON.stringify({ action, data })
-//       });
-  
-//       const result = await response.json();
-//       return result;
-//     } catch (err) {
-//       console.error("Request failed:", err);
-//       return { success: false, error: err.message };
-//     }
-//   }
-  
 
 function errform(icon1, bgcolor, error) {
   const ErrP = document.getElementById('ErrForm');
@@ -292,17 +269,3 @@ window.addEventListener("DOMContentLoaded", checkSession);
 
 
 
-
-// supabase = createClient(
-//     import.meta.env.VITE_SUPABASE_URL;
-//     import.meta.env.VITE_SUPABASE_ANON_KEY;
-// );
-
-// const refreshToken = localStorage.getItem('refresh_token')
-
-// const { data, error } =
-//   await supabase.auth.refreshSession({ refresh_token: refreshToken })
-
-// if (!error) {
-//   localStorage.setItem('access_token', data.session.access_token)
-// }
