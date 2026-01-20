@@ -153,7 +153,7 @@ async function doSignin(data) {
         //   },
         //   credentials: 'include',
           // console.log(body: JSON.stringify({}));  
-        });
+        // });
         // console.log(verrifysec);
         window.location.replace("/dashboard");
     } 
