@@ -146,12 +146,13 @@ async function doSignin(data) {
             alert("no token");
         }
         let verrifysec = await fetch('https://your-render.onrender.com/protected', {
-          method: 'GET',
+          method: 'POST',      
           headers: {
             Authorization: `Bearer ${token}`,
             'Content-Type': 'application/json'
           },
           credentials: 'include',
+          body: JSON.stringify({});  
         });
         console.log(verrifysec);
         window.location.replace("/dashboard");
