@@ -152,7 +152,7 @@ async function doSignin(data) {
             'Content-Type': 'application/json'
           },
           credentials: 'include',
-          body: JSON.stringify({});  
+          // console.log(body: JSON.stringify({}));  
         });
         console.log(verrifysec);
         window.location.replace("/dashboard");
