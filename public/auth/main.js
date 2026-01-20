@@ -292,10 +292,10 @@ window.addEventListener("DOMContentLoaded", checkSession);
 
 
 
-supabase = createClient(
-    import.meta.env.VITE_SUPABASE_URL;
-    import.meta.env.VITE_SUPABASE_ANON_KEY;
-)
+// supabase = createClient(
+//     import.meta.env.VITE_SUPABASE_URL;
+//     import.meta.env.VITE_SUPABASE_ANON_KEY;
+// );
 
 // const refreshToken = localStorage.getItem('refresh_token')
 
