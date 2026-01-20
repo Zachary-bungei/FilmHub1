@@ -145,14 +145,14 @@ async function doSignin(data) {
         if(!token){
             alert("no token");
         }
-        let tttttt = await fetch('https://your-render.onrender.com/protected', {
+        let verrifysec = await fetch('https://your-render.onrender.com/protected', {
           method: 'GET',
           headers: {
             Authorization: `Bearer ${token}`,
           },
           credentials: 'include',
         });
-        console.log(tttttt);
+        console.log(verrifysec);
         window.location.replace("/dashboard");
     } 
 }
@@ -291,10 +291,10 @@ window.addEventListener("DOMContentLoaded", checkSession);
 
 
 
-// supabase = createClient(
-//   const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL;
-//   const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY;
-// )
+supabase = createClient(
+    import.meta.env.VITE_SUPABASE_URL;
+    import.meta.env.VITE_SUPABASE_ANON_KEY;
+)
 
 // const refreshToken = localStorage.getItem('refresh_token')
 
