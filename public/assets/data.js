@@ -264,6 +264,7 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   const title = document.getElementById("title").value.trim();
   const hook = document.getElementById("hook").value.trim();
   const describe = document.getElementById("description").value.trim();
+  const category = document.getElementById("category1").value;
 
   if(wordCount(title) > 6 || wordCount(title) < 1) return alert("Title must be max 6 words");
   if(wordCount(hook) > 10 || wordCount(title) < 1) return alert("Hook must be max 10 words");
@@ -292,11 +293,16 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   const response = await fetch("https://filmhub-x7on.onrender.com/submit-idea", {
     method: "POST",
     body: {
+        userId,
+        category,
        title,
        hook,
        describe,
        pdf: pdfBase64,
-       banner: bannerBase64 
+       banner: bannerBase64,
+       rate: 0,
+      available: true,
+      date
     }
   });
 
