@@ -259,7 +259,6 @@ function fileToBase64(file) {
 document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
 
   const formData = new FormData(form2);
-  
   // Word count validations
   const title = document.getElementById("title").value.trim();
   const hook = document.getElementById("hook").value.trim();
@@ -290,6 +289,15 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   bannerFile = await fileToBase64(bannerFile) || null;
 
   // Send data to server
+
+    const now = new Date();
+    const date =
+      now.getFullYear() + "-" +
+      String(now.getMonth() + 1).padStart(2, "0") + "-" +
+      String(now.getDate()).padStart(2, "0") + "T" +
+      String(now.getHours()).padStart(2, "0") + ":" +
+      String(now.getMinutes()).padStart(2, "0") + ":00";
+        
   const response = await fetch("https://filmhub-x7on.onrender.com/submit-idea", {
     method: "POST",
     body: {
