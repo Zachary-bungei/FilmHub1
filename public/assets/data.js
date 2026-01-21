@@ -313,8 +313,8 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
       title: title,
       hook: hook,
       describe: describe,
-      pdf: pdfBase64,
-      banner: bannerBase64,
+      pdf: pdfFile,
+      banner: bannerFile,
       rate: 0,
       available: true,
       date: date
