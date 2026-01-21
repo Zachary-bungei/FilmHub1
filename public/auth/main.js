@@ -136,9 +136,9 @@ async function doSignin(data) {
         SignBtn.innerText = "Submit";
     }else{
         errform("check_circle", "green", " login successfully");
-        localStorage.setItem('access_token', result1.access_token)
-        localStorage.setItem('refresh_token', result1.refresh_token)
-        localStorage.setItem('expires_at', result1.expires_at)
+        sessionStorage.setItem('access_token', result1.access_token)
+        sessionStorage.setItem('refresh_token', result1.refresh_token)
+        sessionStorage.setItem('expires_at', result1.expires_at)
         
         // alert(result1.access_token);
         let token1 = sessionStorage.getItem("access_token");
@@ -246,36 +246,25 @@ if (isHidden) {
     // toggle.textContent = 'Hide';
 }
 });
-const allLocalStorage = {};
 
-for (let i = 0; i < localStorage.length; i++) {
-  const key = localStorage.key(i);
-  allLocalStorage[key] = localStorage.getItem(key);
-}
+let token = sessionStorage.getItem("access_token");
 
-console.log(allLocalStorage);
-
-
-async function checkSession() {
-  const token = sessionStorage.getItem("access_token");
-    alert(token);
-
-  if (!token) {
+if (!token) {
     console.log(token);
     return;
-  }
+}
 
-  const res = await fetch("https://filmhub-x7on.onrender.com/checksession", {
+const res = await fetch("https://filmhub-x7on.onrender.com/checksession", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${token}`,
     },
-  });
+});
 
-  const data = await res.json();
-  // console.log("Session check:", data);
-    
+const data = await res.json();
+// console.log("Session check:", data);
+
 }
 window.addEventListener("DOMContentLoaded", checkSession);
 
