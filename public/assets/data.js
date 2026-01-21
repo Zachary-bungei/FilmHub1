@@ -297,7 +297,7 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
     
     const userId = sessionStorage.getItem(user.email);
     if (!userId) {
-      console.warn("No userId found in sessionStorage");
+      console.log("No userId found in sessionStorage");
     }
       
   const response = await fetch("https://filmhub-x7on.onrender.com/submit-idea", {
