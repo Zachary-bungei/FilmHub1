@@ -270,7 +270,7 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   if(wordCount(describe) > 100 || wordCount(title) < 1) return alert("Description must be max 100 words");
     
   // PDF validation
-    const pdfInput = document.getElementById("pdf");
+    let pdfInput = document.getElementById("pdf");
     let pdfFile = pdfInput.files[0];
     
     if (pdfFile && pdfFile.type !== "application/pdf") {
@@ -280,7 +280,7 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
     pdfFile = pdfFile ? await fileToBase64(pdfFile) : null;
 
   // Banner validation
-  const bannerFile = document.getElementById("banner");
+  let bannerFile = document.getElementById("banner");
    bannerFile = bannerFile.files[0];
     
   if(bannerFile && !bannerFile.type.startsWith("image/")) return alert("Banner must be an image file");
