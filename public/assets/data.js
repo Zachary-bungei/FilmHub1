@@ -297,7 +297,7 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
       String(now.getHours()).padStart(2, "0") + ":" +
       String(now.getMinutes()).padStart(2, "0") + ":00";
     
-    const userId = sessionStorage.getItem(owner);
+    const userId = sessionStorage.getItem('owner');
     if (!userId) {
       console.log("No userId found in sessionStorage");
     }
