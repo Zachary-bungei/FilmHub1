@@ -250,27 +250,34 @@ if (isHidden) {
 
 
 
-funtion checksession(){
-    let token = sessionStorage.getItem("access_token");
-     if (!token) {
-        console.error('No access token found. Stopping function.');
-        return null; 
-      }
-    
+async function checkSession() {
+  const token = sessionStorage.getItem("access_token");
+
+  // Stop function early if no token
+  if (!token) {
+    console.error('No access token found. Stopping function.');
+    return null;
+  }
+
+  try {
     const res = await fetch("https://filmhub-x7on.onrender.com/checksession", {
-        
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      // Optional: if your backend expects token in JSON instead of header
+      // body: JSON.stringify({ token })
     });
-    
+
     const data = await res.json();
     console.log("Session check:", data);
-    
-    }
+  } catch (err) {
+    console.error("Error checking session:", err);
+  }
 }
+
+// Make sure the function name matches here
 window.addEventListener("DOMContentLoaded", checkSession);
 
 
