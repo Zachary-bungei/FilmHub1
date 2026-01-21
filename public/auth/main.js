@@ -258,9 +258,10 @@ console.log(allLocalStorage);
 
 async function checkSession() {
   const token = sessionStorage.getItem("access_token");
+    alert(token);
 
   if (!token) {
-    console.log("No session token found");
+    console.log(token);
     return;
   }
 
