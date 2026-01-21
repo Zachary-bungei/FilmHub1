@@ -247,14 +247,36 @@ const form2 = document.getElementById("ideaForm");
 function wordCount(str) {
   return str.trim().split(/\s+/).length;
 }
-function fileToBase64(file) {
-  return new Promise((resolve, reject) => {
+
+async function fileToBase64PDF(file) {
+  const MAX_SIZE = 50 * 1024 * 1024; // 50 MB
+  if (!(file instanceof Blob)) return null;
+  if (file.type !== "application/pdf") return null;
+  if (file.size > MAX_SIZE) return null;
+
+  return new Promise((resolve) => {
     const reader = new FileReader();
     reader.onload = () => resolve(reader.result);
-    reader.onerror = reject;
+    reader.onerror = () => resolve(null);
     reader.readAsDataURL(file);
   });
 }
+
+// IMAGE handler (you can adjust types & size)
+async function fileToBase64Image(file) {
+  const MAX_SIZE = 10 * 1024 * 1024; // example: 10 MB limit for images
+  if (!(file instanceof Blob)) return null;
+  if (!file.type.startsWith("image/")) return null;
+  if (file.size > MAX_SIZE) return null;
+
+  return new Promise((resolve) => {
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = () => resolve(null);
+    reader.readAsDataURL(file);
+  });
+}
+
 
 document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
    e.preventDefault();
@@ -270,25 +292,17 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   if(wordCount(hook) > 10 || wordCount(title) < 1) return alert("Hook must be max 10 words");
   if(wordCount(describe) > 100 || wordCount(title) < 1) return alert("Description must be max 100 words");
     
-  // PDF validation
-    let pdfInput = document.getElementById("pdf");
+    const pdfInput = document.getElementById("pdf");
     let pdfFile = pdfInput.files[0];
+    const pdfBase64 = pdfFile ? await fileToBase64PDF(pdfFile) : null;
+    if (!pdfBase64) alert("Invalid PDF or file exceeds 50 MB");
     
-    if (pdfFile && pdfFile.type !== "application/pdf") {
-      alert("PDF must be a PDF file");
-      return;
-    }
-    pdfFile = pdfFile ? await fileToBase64(pdfFile) : null;
-
+    // Image input (banner)
+    const bannerInput = document.getElementById("banner");
+    let bannerFile = bannerInput.files[0];
+    const bannerBase64 = bannerFile ? await fileToBase64Image(bannerFile) : null;
+    if (!bannerBase64) alert("Invalid image or file exceeds 10 MB");
     
-  // Banner validation
-  let bannerFile = document.getElementById("banner");
-   bannerFile = bannerFile.files[0];
-    
-  if(bannerFile && !bannerFile.type.startsWith("image/")) return alert("Banner must be an image file");
-  bannerFile = await fileToBase64(bannerFile) || null;
-  // Send data to server
-
     const now = new Date();
     const date =
       now.getFullYear() + "-" +
@@ -313,10 +327,10 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
     
       // Append file objects if they exist
       if (pdfFile) {
-        formData.append("pdf", pdfFile);
+        formData.append("pdf", pdfBase64);
       }
       if (bannerFile) {
-        formData.append("banner", bannerFile);
+        formData.append("banner", bannerBase64);
       }
     
       const response = await fetch("https://filmhub-x7on.onrender.com/submit-idea", {
