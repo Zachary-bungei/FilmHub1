@@ -364,23 +364,29 @@
                     <h2>Submit Your Idea</h2>
                   
                     <form id="ideaForm">
-                  
                       <label>Banner Image (png, jpeg)</label>
                       <input type="file" id="banner" accept="image/png" />
                       <img id="bannerPreview" class="banner-preview" />
                   
                       <label>Title - 6 words</label>
                       <input type="text" id="title" placeholder="Your idea title" required />
-                  
+                        <label for="description">Category</label>
+                    <select id="category1">
+                      <option value="">-- Select a category --</option>
+                      <option value="tech">Technology</option>
+                      <option value="science">Science</option>
+                      <option value="art">Art & Design</option>
+                      <option value="other">Other</option>
+                    </select>
+                                      
                       <label>Hook 20 words</label>
                       <input type="text" id="hook" placeholder="Short hook for attention" required />
                   
-                      <label>Description - 50 < words < 150</label>
+                      <label>Description - 50 words to   150</label>
                       <textarea id="description" placeholder="Describe your idea…" required></textarea>
                   
                       <label>PDF File - max 5mb</label>
                       <input type="file" id="pdf" accept="application/pdf" required />
-
                   
                       <button type="submit" id="Submit_Idea">Submit Idea</button>
                     </form>
