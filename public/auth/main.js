@@ -138,6 +138,7 @@ async function doSignin(data) {
         errform("check_circle", "green", " login successfully");
         sessionStorage.setItem('access_token', result1.access_token)
         sessionStorage.setItem('refresh_token', result1.refresh_token)
+        sessionStorage.setItem('owner', result1.user.id)
         sessionStorage.setItem('expires_at', result1.expires_at)
         
         // alert(result1.access_token);
