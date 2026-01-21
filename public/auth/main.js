@@ -141,6 +141,11 @@ async function doSignin(data) {
         localStorage.setItem('expires_at', result1.expires_at)
         
         // alert(result1.access_token);
+        let token1 = sessionStorage.getItem("access_token");
+          if (!token1) {
+            console.log("No session token found after login!");
+            return;
+          }
         let verrifysec = await fetch('https://filmhub-x7on.onrender.com/protected', {
           method: 'POST',
           headers: {
@@ -148,7 +153,7 @@ async function doSignin(data) {
           },
           credentials: 'include',
           body: JSON.stringify({
-            token: result1.access_token
+            token: token1
           })
         });
         console.log(verrifysec);
