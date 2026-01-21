@@ -301,25 +301,31 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
     if (!userId) {
       console.log("No userId found in sessionStorage");
     }
-      
-  const response = await fetch("https://filmhub-x7on.onrender.com/submit-idea", {
-    method: "POST",
-      headers: {
-      "Content-Type": "application/json"
-    },
-    body: {
-       userId: userId,
-       category: category,
-      title: title,
-      hook: hook,
-      describe: describe,
-      pdf: pdfFile,
-      banner: bannerFile,
-      rate: 0,
-      available: true,
-      date: date
-    }
-  });
+    const formData = new FormData();
+      formData.append("userId", userId);
+      formData.append("category", category);
+      formData.append("title", title);
+      formData.append("hook", hook);
+      formData.append("describe", describe);
+      formData.append("rate", 0);
+      formData.append("available", true);
+      formData.append("date", date);
+    
+      // Append file objects if they exist
+      if (pdfFile) {
+        formData.append("pdf", pdfFile);
+      }
+      if (bannerFile) {
+        formData.append("banner", bannerFile);
+      }
+    
+      const response = await fetch("https://filmhub-x7on.onrender.com/submit-idea", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: formData, 
+      });
 
   const result = await response.json();
   alert(result.message);
