@@ -141,20 +141,17 @@ async function doSignin(data) {
         localStorage.setItem('expires_at', result1.expires_at)
         
         // alert(result1.access_token);
-        // let token = result1.access_token;
-        // if(!token){
-            // alert("no token");
-        // }
-        // let verrifysec = await fetch('https://your-render.onrender.com/protected', {
-        //   method: 'POST',      
-        //   headers: {
-        //     Authorization: `Bearer ${token}`,
-        //     'Content-Type': 'application/json'
-        //   },
-        //   credentials: 'include',
-          // console.log(body: JSON.stringify({}));  
-        // });
-        // console.log(verrifysec);
+        let verrifysec = await fetch('https://your-render.onrender.com/protected', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          credentials: 'include',
+          body: JSON.stringify({
+            token: result1.access_token
+          })
+        });
+        console.log(verrifysec);
         window.location.replace("/dashboard");
     } 
 }
