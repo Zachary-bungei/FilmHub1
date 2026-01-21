@@ -1004,28 +1004,7 @@
             });
         });
     </script>
-    <script>
-        // banner image preview
-        const bannerInput = document.getElementById('banner');
-        const bannerPreview = document.getElementById('bannerPreview');
-        
-        bannerInput.addEventListener('change', () => {
-          const file = bannerInput.files[0];
-          if (!file) return;
-          const reader = new FileReader();
-          reader.onload = e => {
-            bannerPreview.src = e.target.result;
-            bannerPreview.style.display = 'block';
-          };
-          reader.readAsDataURL(file);
-        });
-        
-        // form submit demo
-        document.getElementById('ideaForm').addEventListener('submit', e => {
-          e.preventDefault();
-          alert('Form submitted! Here you’d send the data to your server or Supabase.');
-        });
-        </script>
+
         <script>
         // const box33 = document.getElementById("othersreation");
         // if (box33.value === "0") {
