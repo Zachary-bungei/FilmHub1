@@ -246,6 +246,15 @@ if (isHidden) {
     // toggle.textContent = 'Hide';
 }
 });
+const allLocalStorage = {};
+
+for (let i = 0; i < localStorage.length; i++) {
+  const key = localStorage.key(i);
+  allLocalStorage[key] = localStorage.getItem(key);
+}
+
+console.log(allLocalStorage);
+
 
 async function checkSession() {
   const token = sessionStorage.getItem("access_token");
