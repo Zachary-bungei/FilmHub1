@@ -257,9 +257,10 @@ function fileToBase64(file) {
 }
 
 document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
-
-  const formData = new FormData(form2);
+   e.preventDefault();
+  // const formData = new FormData(form2);
   // Word count validations
+    
   const title = document.getElementById("title").value.trim();
   const hook = document.getElementById("hook").value.trim();
   const describe = document.getElementById("description").value.trim();
@@ -279,6 +280,7 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
     }
     pdfFile = pdfFile ? await fileToBase64(pdfFile) : null;
 
+    
   // Banner validation
   let bannerFile = document.getElementById("banner");
    bannerFile = bannerFile.files[0];
@@ -323,12 +325,4 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   alert(result.message);
 });
 
-// async function fileToBase64(file) {
-//   return new Promise((resolve, reject) => {
-//     const reader = new FileReader();
-//     reader.onload = () => resolve(reader.result); // result is "data:<type>;base64,..."
-//     reader.onerror = error => reject(error);
-//     reader.readAsDataURL(file);
-//   });
-// }
 
