@@ -268,26 +268,23 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
   if(wordCount(title) > 6 || wordCount(title) < 1) return alert("Title must be max 6 words");
   if(wordCount(hook) > 10 || wordCount(title) < 1) return alert("Hook must be max 10 words");
   if(wordCount(describe) > 100 || wordCount(title) < 1) return alert("Description must be max 100 words");
-
-  // Rate validation (0-5)
-  // const rateValue = parseFloat(document.getElementById("rate"));
-  // if(rateValue < 0 || rateValue > 5) return alert("Rate must be between 0 and 5");
     
   // PDF validation
-  const pdfFile = document.getElementById("pdf");
-   pdfFile = pdfInput.files[0];
-  if (pdfFile?.type && pdfFile.type !== "application/pdf") {
-      return alert("PDF must be a PDF file");
+    const pdfInput = document.getElementById("pdf");
+    let pdfFile = pdfInput.files[0];
+    
+    if (pdfFile && pdfFile.type !== "application/pdf") {
+      alert("PDF must be a PDF file");
+      return;
     }
-
-   pdfFile = await fileToBase64(pdfFile) || null;
+    pdfFile = pdfFile ? await fileToBase64(pdfFile) : null;
 
   // Banner validation
   const bannerFile = document.getElementById("banner");
    bannerFile = bannerFile.files[0];
+    
   if(bannerFile && !bannerFile.type.startsWith("image/")) return alert("Banner must be an image file");
   bannerFile = await fileToBase64(bannerFile) || null;
-
   // Send data to server
 
     const now = new Date();
@@ -297,20 +294,28 @@ document.getElementById("Submit_Idea").addEventListener("click", async (e) => {
       String(now.getDate()).padStart(2, "0") + "T" +
       String(now.getHours()).padStart(2, "0") + ":" +
       String(now.getMinutes()).padStart(2, "0") + ":00";
-        
+    
+    const userId = sessionStorage.getItem(user.email);
+    if (!userId) {
+      console.warn("No userId found in sessionStorage");
+    }
+      
   const response = await fetch("https://filmhub-x7on.onrender.com/submit-idea", {
     method: "POST",
+      headers: {
+      "Content-Type": "application/json"
+    },
     body: {
-        userId,
-        category,
-       title,
-       hook,
-       describe,
-       pdf: pdfBase64,
-       banner: bannerBase64,
-       rate: 0,
+       userId: userId,
+       category: category,
+      title: title,
+      hook: hook,
+      describe: describe,
+      pdf: pdfBase64,
+      banner: bannerBase64,
+      rate: 0,
       available: true,
-      date
+      date: date
     }
   });
 
