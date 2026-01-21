@@ -247,24 +247,29 @@ if (isHidden) {
 }
 });
 
-let token = sessionStorage.getItem("access_token");
 
-if (!token) {
-    console.log(token);
-    return;
-}
 
-const res = await fetch("https://filmhub-x7on.onrender.com/checksession", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`,
-    },
-});
 
-const data = await res.json();
-// console.log("Session check:", data);
-
+funtion checksession(){
+    let token = sessionStorage.getItem("access_token");
+     if (!token) {
+        console.error('No access token found. Stopping function.');
+        return null; 
+      }
+    
+    const res = await fetch("https://filmhub-x7on.onrender.com/checksession", {
+        
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+    });
+    
+    const data = await res.json();
+    console.log("Session check:", data);
+    
+    }
 }
 window.addEventListener("DOMContentLoaded", checkSession);
 
